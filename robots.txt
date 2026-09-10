@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://motechy.vercel.app/sitemap.xml

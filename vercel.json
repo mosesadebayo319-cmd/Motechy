@@ -1,0 +1,72 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/", "destination": "/blog/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/7-day-content-starter.html",
+      "destination": "/blog/7-day-content-starter.html",
+      "permanent": false
+    },
+    {
+      "source": "/7-day-content-starter",
+      "destination": "/blog/7-day-content-starter",
+      "permanent": false
+    },
+    {
+      "source": "/content-strategy-problem.html",
+      "destination": "/blog/content-strategy-problem.html",
+      "permanent": false
+    },
+    {
+      "source": "/content-strategy-problem",
+      "destination": "/blog/content-strategy-problem",
+      "permanent": false
+    },
+    {
+      "source": "/signal-vs-noise.html",
+      "destination": "/blog/signal-vs-noise.html",
+      "permanent": false
+    },
+    {
+      "source": "/signal-vs-noise",
+      "destination": "/blog/signal-vs-noise",
+      "permanent": false
+    },
+    {
+      "source": "/systems-beat-hacks.html",
+      "destination": "/blog/systems-beat-hacks.html",
+      "permanent": false
+    },
+    {
+      "source": "/systems-beat-hacks",
+      "destination": "/blog/systems-beat-hacks",
+      "permanent": false
+    },
+    {
+      "source": "/consistency-creates-momentum.html",
+      "destination": "/blog/consistency-creates-momentum.html",
+      "permanent": false
+    },
+    {
+      "source": "/consistency-creates-momentum",
+      "destination": "/blog/consistency-creates-momentum",
+      "permanent": false
+    }
+  ]
+}
