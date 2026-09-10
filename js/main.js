@@ -282,10 +282,12 @@
   const serviceParam = params.get("service");
   if (serviceParam && document.getElementById("service")) {
     const select = document.getElementById("service");
-    const opt = Array.from(select.options).find(
-      (o) => o.value.toLowerCase() === serviceParam.toLowerCase()
-    );
-    if (opt) select.value = opt.value;
+    const needle = serviceParam.toLowerCase();
+    const opt = Array.from(select.options).find((o) => {
+      const v = (o.value || o.textContent || "").toLowerCase();
+      return v === needle || v.includes(needle) || needle.includes(v);
+    });
+    if (opt) select.value = opt.value || opt.textContent;
   }
 
   // Active nav for hash sections on homepage
