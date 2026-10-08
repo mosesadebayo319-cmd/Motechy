@@ -50,16 +50,16 @@ const articles = JSON.parse(
 const pages = [
   {
     path: "/",
-    title: "MoTechy — Brand, Content & Digital Marketing in Nigeria",
+    title: "MoTechy — Digital Marketing & Software Development in Nigeria",
     description:
-      "An independent digital marketing studio in Abuja. Brand strategy, social media, content and paid advertising for Nigerian founders and growing businesses.",
+      "Brand strategy, digital marketing and software development in Abuja, Nigeria. Websites, web applications and marketing for founders and growing businesses.",
     body: home(asset),
   },
   {
     path: "/services",
     title: "Services & Packages — MoTechy",
     description:
-      "Explore MoTechy’s branding, social media, content strategy, paid advertising and design services. Monthly packages from ₦150,000.",
+      "Explore branding, social media, advertising and software development. Marketing packages from ₦150,000/month; websites and software quoted by project.",
     body: servicesPage(),
   },
   {
@@ -73,14 +73,14 @@ const pages = [
     path: "/about",
     title: "About Moses Adebayo & MoTechy — Abuja",
     description:
-      "Meet Moses Adebayo, founder of MoTechy. A personal approach to brand strategy, design and digital marketing for Nigerian businesses.",
+      "Meet Moses Adebayo, founder of MoTechy. Brand strategy, digital marketing and software development for Nigerian businesses.",
     body: about(asset),
   },
   {
     path: "/contact",
     title: "Start a Conversation — MoTechy",
     description:
-      "Tell MoTechy about your business and marketing priorities. Request a conversation or reach us on WhatsApp. Based in Abuja, working across Nigeria.",
+      "Tell MoTechy about your marketing, website or software project. Request a conversation or reach us on WhatsApp. Based in Abuja, working across Nigeria.",
     body: contact(),
   },
   {

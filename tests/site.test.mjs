@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
+import { services, serviceOptions } from "../src/data.mjs";
+import { validateEnquiry } from "../lib/contact.mjs";
 const root = path.resolve("dist");
 function walk(dir) {
   return fs
@@ -11,6 +13,33 @@ function walk(dir) {
     );
 }
 const pages = walk(root).filter((p) => p.endsWith(".html"));
+test("Every service leads to a selectable enquiry accepted by the server", () => {
+  const catalogue = fs.readFileSync(path.join(root, "services.html"), "utf8");
+  const form = fs.readFileSync(path.join(root, "contact.html"), "utf8");
+  for (const service of services) {
+    const article = catalogue.match(
+      new RegExp(`<article[^>]+id="${service.id}"[\\s\\S]*?</article>`),
+    )?.[0];
+    assert.ok(article, service.id);
+    const href = article.match(/href="([^\"]+)"/)?.[1];
+    const selected = new URL(href, "https://example.test").searchParams.get(
+      "service",
+    );
+    assert.equal(selected, service.enquiry);
+    assert.ok(serviceOptions.includes(selected));
+    assert.ok(form.includes(`<option value="${selected}">`));
+    assert.equal(
+      validateEnquiry({
+        name: "Example Customer",
+        email: "customer@example.com",
+        service: selected,
+        message: "Please discuss this project with me.",
+      }).valid,
+      true,
+      service.id,
+    );
+  }
+});
 function fileFor(url) {
   let p = path.join(root, url.pathname);
   if (url.pathname === "/") p = path.join(root, "index.html");

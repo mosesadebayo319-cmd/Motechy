@@ -1,3 +1,5 @@
+export { serviceOptions } from "../lib/service-options.mjs";
+
 export const company = {
   name: "MoTechy",
   email: "motechy123@gmail.com",
@@ -9,6 +11,7 @@ export const company = {
 export const services = [
   {
     id: "social",
+    enquiry: "Social Media Management",
     title: "Social media management",
     brief: "A consistent presence, with a clear reason behind every post.",
     detail:
@@ -22,6 +25,7 @@ export const services = [
   },
   {
     id: "branding",
+    enquiry: "Branding",
     title: "Brand strategy & identity",
     brief: "Make it easier for the right people to recognise and choose you.",
     detail:
@@ -35,6 +39,7 @@ export const services = [
   },
   {
     id: "content",
+    enquiry: "Content Strategy",
     title: "Content strategy",
     brief: "Useful content that gives your audience a reason to pay attention.",
     detail:
@@ -48,6 +53,7 @@ export const services = [
   },
   {
     id: "ads",
+    enquiry: "Paid Ads",
     title: "Paid advertising",
     brief: "Put the right message in front of people who may need your offer.",
     detail:
@@ -61,6 +67,7 @@ export const services = [
   },
   {
     id: "growth",
+    enquiry: "Digital Growth",
     title: "Digital growth consulting",
     brief: "A clear view of what to improve next.",
     detail:
@@ -74,6 +81,7 @@ export const services = [
   },
   {
     id: "design",
+    enquiry: "Creative Design",
     title: "Creative design",
     brief: "Thoughtful design for the places your brand shows up.",
     detail:
@@ -85,18 +93,20 @@ export const services = [
       "Brand and campaign assets",
     ],
   },
-];
-export const serviceOptions = [
-  "Social Media Management",
-  "Branding",
-  "Content Strategy",
-  "Paid Ads",
-  "Digital Growth",
-  "Creative Design",
-  "Starter package",
-  "Growth package",
-  "Scale package",
-  "Not sure — need advice",
+  {
+    id: "software",
+    enquiry: "Software Development",
+    title: "Software development",
+    brief: "Websites and business tools built around the way you work.",
+    detail:
+      "We design and build websites, web applications and custom tools that help your business serve customers and work more efficiently. We agree requirements, design, development, testing and launch with you, with ongoing support scoped to your needs.",
+    items: [
+      "Business websites and landing pages",
+      "Custom web applications and customer portals",
+      "Internal tools, integrations and automation",
+      "Testing, launch and maintenance",
+    ],
+  },
 ];
 export const work = [
   {
@@ -224,7 +234,7 @@ export const faqs = [
   ],
   [
     "Can I start with one service?",
-    "Yes. You can enquire about branding, content, design or advertising on its own. We’ll recommend a scope based on your goals and what you already have in place.",
+    "Yes. You can enquire about branding, content, design, advertising or software development on its own. We’ll recommend a scope based on your goals and what you already have in place.",
   ],
   [
     "What happens after I get in touch?",
@@ -233,6 +243,10 @@ export const faqs = [
   [
     "What is included in the price?",
     "The packages show starting monthly fees. Your proposal will confirm platforms, deliverables, revisions, production requirements, contract terms and any advertising spend before work begins.",
+  ],
+  [
+    "How are software projects priced?",
+    "Software development is quoted separately from our monthly marketing packages. We first discuss the users, features, integrations and support you need, then agree the scope, milestones, timeline and price before development begins.",
   ],
   [
     "When should I expect results?",

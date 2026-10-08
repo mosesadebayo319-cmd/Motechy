@@ -65,6 +65,24 @@ test("An HTTP success without explicit provider acceptance never confirms delive
       { accepted: true },
     );
 });
+test("Software enquiries reach the delivery provider with the selected service and budget", async () => {
+  const enquiry = validateEnquiry({
+    ...valid,
+    service: "Software Development",
+    budget: "₦700k+",
+  });
+  assert.equal(enquiry.valid, true);
+  let sent;
+  await deliverEnquiry(enquiry.data, {
+    fetchImpl: async (_url, options) => {
+      sent = JSON.parse(options.body);
+      return { ok: true, json: async () => ({ success: true }) };
+    },
+  });
+  assert.equal(sent.service, "Software Development");
+  assert.equal(sent.budget, "₦700k+");
+  assert.equal(sent._subject, "MoTechy enquiry: Software Development");
+});
 test("Network and response-decoding failures propagate as delivery errors", async () => {
   await assert.rejects(
     () =>
