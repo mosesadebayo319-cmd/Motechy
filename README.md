@@ -23,6 +23,8 @@ This builds the site and checks links, metadata, asset versioning, enquiry valid
 
 - `src/data.mjs`: company information, service descriptions, packages and selected work.
 - `src/pages.mjs`: page content and layouts.
+- `src/software.mjs`: dedicated software-development page, delivery process and project enquiry links.
+- `src/software-projects.mjs`: curated project descriptions, screenshots and verified preview/source links.
 - `src/templates.mjs`: shared navigation, footer and metadata.
 - `src/content/`: the existing long-form articles.
 - `css/styles.css`: responsive visual system.
@@ -52,11 +54,13 @@ Optional environment variables are documented in `.env.example`:
 - `FORM_EMAIL`: existing recipient, defaults to `motechy123@gmail.com`.
 - `ANALYTICS_ENABLED`: enables Vercel Web Analytics integration. Do not include form content in analytics events.
 
-Analytics events distinguish `enquiry_accepted`, `enquiry_error`, `whatsapp_click`, `phone_click`, and `email_click`. Global Privacy Control and Do Not Track opt out. URLs sent to analytics are stripped of query strings and fragments. Only a bounded `utm_source` label is retained for the current browser session; no personal form values are tracked.
+Analytics events distinguish `enquiry_accepted`, `enquiry_error`, `whatsapp_click`, `phone_click`, `email_click`, and `software_project_click`. Project events contain only a curated project ID and the action (preview, source or image). Global Privacy Control and Do Not Track opt out. URLs sent to analytics are stripped of query strings and fragments. Only a bounded `utm_source` label is retained for the current browser session; no personal form values are tracked.
 
 ## Content integrity
 
 The public work collection uses MoTechy-branded examples from the existing repository. Images carrying unrelated agency branding are retained in the repository as original reference assets but are excluded from the build. No client performance statistics, third-party endorsements or fabricated testimonials are published. Add verified case studies with permission when source material is available.
+
+The software page showcases independent products and company/personal websites, with actual interface screenshots. See `docs/SOFTWARE-PROJECTS.md` for sources, preview verification and screenshot provenance. Keep unavailable previews as `null`; do not create placeholder links or imply a prototype is a working public service.
 
 ## Domain migration
 

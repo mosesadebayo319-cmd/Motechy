@@ -47,7 +47,7 @@ function fileFor(url) {
   return p;
 }
 test("Every generated page has one H1, shared navigation, clean metadata and no missing local targets", () => {
-  assert.equal(pages.length, 14);
+  assert.equal(pages.length, 15);
   for (const file of pages) {
     const html = fs.readFileSync(file, "utf8");
     assert.equal((html.match(/<h1[ >]/g) || []).length, 1, file);

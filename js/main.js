@@ -60,6 +60,14 @@ function track(name, extra = {}) {
 document
   .querySelectorAll("[data-track]")
   .forEach((a) => a.addEventListener("click", () => track(a.dataset.track)));
+document.querySelectorAll("[data-project-action]").forEach((link) => {
+  link.addEventListener("click", () => {
+    track("software_project_click", {
+      project: link.dataset.project,
+      action: link.dataset.projectAction,
+    });
+  });
+});
 let source = "direct";
 if (!privacyOptOut) {
   try {

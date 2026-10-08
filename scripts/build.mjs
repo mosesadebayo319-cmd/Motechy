@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
+import { softwarePage } from "../src/software.mjs";
 import { layout, pageIntro, cta } from "../src/templates.mjs";
 import {
   home,
@@ -61,6 +62,41 @@ const pages = [
     description:
       "Explore branding, social media, advertising and software development. Marketing packages from ₦150,000/month; websites and software quoted by project.",
     body: servicesPage(),
+  },
+  {
+    path: "/software-development",
+    title: "Software Development in Abuja, Nigeria — MoTechy",
+    description:
+      "Websites, web applications and business tools by MoTechy. Explore ImpactDesk, ZeroToCode and more, then discuss your software project with our Abuja studio.",
+    body: softwarePage(asset),
+    structuredData: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Software development",
+        serviceType: "Websites, web applications and business tools",
+        url: base + "/software-development",
+        provider: {
+          "@type": "ProfessionalService",
+          name: "MoTechy",
+          url: base,
+        },
+        areaServed: { "@type": "Country", name: "Nigeria" },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: base + "/" },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Software development",
+            item: base + "/software-development",
+          },
+        ],
+      },
+    ],
   },
   {
     path: "/work",
