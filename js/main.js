@@ -1,314 +1,187 @@
-/* MoTechy — site interactions */
-
-(function () {
-  "use strict";
-
-  const header = document.querySelector(".site-header");
-  const toggle = document.querySelector(".nav-toggle");
-  const mobileNav = document.querySelector(".mobile-nav");
-  const yearEls = document.querySelectorAll("[data-year]");
-  const FORM_EMAIL = "motechy123@gmail.com";
-
-  yearEls.forEach((el) => {
-    el.textContent = String(new Date().getFullYear());
+// MoTechy: progressively enhanced navigation, enquiries and privacy-conscious events.
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("#site-navigation");
+const mobile = window.matchMedia("(max-width: 760px)");
+function closeMenu(returnFocus = false) {
+  nav?.classList.remove("is-open");
+  toggle?.setAttribute("aria-expanded", "false");
+  if (returnFocus) toggle?.focus();
+}
+if (toggle && nav) {
+  toggle.hidden = false;
+  nav.dataset.enhanced = "true";
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") !== "true";
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
   });
-
-  function onScroll() {
-    if (!header) return;
-    header.classList.toggle("scrolled", window.scrollY > 24);
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  if (toggle && mobileNav) {
-    toggle.addEventListener("click", () => {
-      const open = mobileNav.classList.toggle("open");
-      toggle.classList.toggle("open", open);
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.classList.toggle("nav-open", open);
-    });
-
-    mobileNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileNav.classList.remove("open");
-        toggle.classList.remove("open");
-        document.body.classList.remove("nav-open");
-      });
-    });
-  }
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll(".reveal");
-  if (reveals.length && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    reveals.forEach((el) => io.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add("visible"));
-  }
-
-  // Animated counters
-  const counters = document.querySelectorAll("[data-count]");
-  if (counters.length && "IntersectionObserver" in window) {
-    const animateCount = (el) => {
-      const target = parseFloat(el.getAttribute("data-count") || "0");
-      const suffix = el.getAttribute("data-suffix") || "";
-      const prefix = el.getAttribute("data-prefix") || "";
-      const duration = 1400;
-      const start = performance.now();
-      const isFloat = !Number.isInteger(target);
-
-      function frame(now) {
-        const t = Math.min(1, (now - start) / duration);
-        const eased = 1 - Math.pow(1 - t, 3);
-        const value = target * eased;
-        el.textContent =
-          prefix +
-          (isFloat ? value.toFixed(1) : Math.round(value).toLocaleString()) +
-          suffix;
-        if (t < 1) requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-    };
-
-    const cio = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCount(entry.target);
-            cio.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-    counters.forEach((el) => cio.observe(el));
-  }
-
-  // FAQ accordion
-  document.querySelectorAll(".faq-item").forEach((item) => {
-    const btn = item.querySelector(".faq-q");
-    if (!btn) return;
-    btn.addEventListener("click", () => {
-      const wasOpen = item.classList.contains("open");
-      document.querySelectorAll(".faq-item.open").forEach((other) => {
-        if (other !== item) other.classList.remove("open");
-      });
-      item.classList.toggle("open", !wasOpen);
-      btn.setAttribute("aria-expanded", !wasOpen ? "true" : "false");
-    });
+  nav
+    .querySelectorAll("a")
+    .forEach((a) => a.addEventListener("click", () => closeMenu()));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true")
+      closeMenu(true);
   });
-
-  // Contact form → localStorage + email (FormSubmit) + WhatsApp
-  const form = document.getElementById("contact-form");
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      clearErrors(form);
-
-      const data = {
-        name: val("name"),
-        email: val("email"),
-        phone: val("phone"),
-        business: val("business"),
-        service: val("service"),
-        budget: val("budget"),
-        message: val("message"),
-      };
-
-      let ok = true;
-      if (!data.name || data.name.length < 2) {
-        setError("name", "Please enter your name.");
-        ok = false;
-      }
-      if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-        setError("email", "Enter a valid email address.");
-        ok = false;
-      }
-      if (!data.service) {
-        setError("service", "Select a service.");
-        ok = false;
-      }
-      if (!data.message || data.message.length < 10) {
-        setError("message", "Tell us a bit more (at least 10 characters).");
-        ok = false;
-      }
-      if (!ok) return;
-
-      const submitBtn = form.querySelector('[type="submit"]');
-      const originalLabel = submitBtn ? submitBtn.textContent : "";
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending…";
-      }
-
-      const lead = {
-        ...data,
-        at: new Date().toISOString(),
-        source: window.location.href,
-        userAgent: navigator.userAgent.slice(0, 180),
-      };
-
-      // 1) Browser storage (always)
-      let storageOk = false;
-      try {
-        const leads = JSON.parse(localStorage.getItem("motechy_leads") || "[]");
-        leads.push(lead);
-        localStorage.setItem("motechy_leads", JSON.stringify(leads));
-        storageOk = true;
-      } catch (_) {
-        /* private mode / quota */
-      }
-
-      // 2) Email via FormSubmit AJAX
-      let emailOk = false;
-      let emailNote = "";
-      try {
-        const res = await fetch(
-          `https://formsubmit.co/ajax/${encodeURIComponent(FORM_EMAIL)}`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify({
-              name: data.name,
-              email: data.email,
-              phone: data.phone || "—",
-              business: data.business || "—",
-              service: data.service,
-              budget: data.budget || "—",
-              message: data.message,
-              _subject: `MoTechy enquiry — ${data.service} — ${data.name}`,
-              _template: "table",
-              _captcha: "false",
-              _replyto: data.email,
-            }),
-          }
-        );
-        emailOk = res.ok;
-        if (!res.ok) {
-          const body = await res.json().catch(() => ({}));
-          emailNote = body.message || "Email service did not accept the request.";
-        }
-      } catch (err) {
-        emailNote = "Could not reach email service (check connection).";
-      }
-
-      // 3) Success UI
-      const success = document.getElementById("form-success");
-      const successDetail = document.getElementById("form-success-detail");
-      form.classList.add("form-hidden");
-      if (success) success.classList.add("show");
-
-      if (successDetail) {
-        const bits = [];
-        if (emailOk) bits.push("sent to MoTechy by email");
-        else bits.push("saved locally" + (emailNote ? ` (email: ${emailNote})` : " — email may need first-time FormSubmit activation"));
-        if (storageOk) bits.push("stored in this browser");
-        bits.push("WhatsApp is opening with your brief");
-        successDetail.textContent =
-          "Your enquiry was " + bits.join(" · ") + ".";
-      }
-
-      // 4) WhatsApp handoff
-      const wa = buildWhatsApp(data);
-      const waLink = document.getElementById("success-wa-link");
-      if (waLink) waLink.href = wa;
-
-      setTimeout(() => {
-        window.open(wa, "_blank", "noopener,noreferrer");
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel || "Send brief";
-        }
-      }, 500);
-    });
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+  });
+  mobile.addEventListener("change", () => closeMenu());
+}
+// Remove the indefinite personal-data copies created by the previous website.
+try {
+  localStorage.removeItem("motechy_leads");
+} catch {}
+const privacyOptOut =
+  navigator.globalPrivacyControl === true || navigator.doNotTrack === "1";
+window.va =
+  window.va ||
+  function (...args) {
+    (window.vaq = window.vaq || []).push(args);
+  };
+// Never send form values or URL query strings to analytics.
+window.va("beforeSend", (event) => {
+  if (privacyOptOut) return null;
+  try {
+    const u = new URL(event.url);
+    u.search = "";
+    u.hash = "";
+    return { ...event, url: u.href };
+  } catch {
+    return event;
   }
-
-  function val(id) {
-    const el = document.getElementById(id);
-    return el ? el.value.trim() : "";
+});
+function track(name, extra = {}) {
+  if (privacyOptOut) return;
+  window.va("event", { name, data: { page: location.pathname, ...extra } });
+  document.dispatchEvent(
+    new CustomEvent("motechy:analytics", { detail: { name, ...extra } }),
+  );
+}
+document
+  .querySelectorAll("[data-track]")
+  .forEach((a) => a.addEventListener("click", () => track(a.dataset.track)));
+let source = "direct";
+if (!privacyOptOut) {
+  try {
+    const value = new URLSearchParams(location.search).get("utm_source");
+    if (value && /^[a-zA-Z0-9_. -]{1,100}$/.test(value))
+      sessionStorage.setItem("motechy_source", value);
+    source = sessionStorage.getItem("motechy_source") || "direct";
+  } catch {}
+}
+const form = document.querySelector("#contact-form");
+if (form) {
+  form.noValidate = true;
+  form.querySelector("[name=source]").value = source;
+  const selected = new URLSearchParams(location.search).get("service");
+  const select = form.elements.service;
+  if (selected) {
+    const match = [...select.options].find(
+      (o) => o.value.toLowerCase() === selected.toLowerCase(),
+    );
+    if (match) select.value = match.value;
   }
-
-  function setError(id, msg) {
-    const group = document.getElementById(id)?.closest(".form-group");
-    const input = document.getElementById(id);
-    if (group) {
-      group.classList.add("has-error");
-      const err = group.querySelector(".error-msg");
-      if (err) err.textContent = msg;
+  const summary = document.querySelector("#form-error");
+  const submit = form.querySelector("[type=submit]");
+  let sending = false;
+  function clearErrors() {
+    summary.hidden = true;
+    summary.textContent = "";
+    form
+      .querySelectorAll("[aria-invalid]")
+      .forEach((e) => e.removeAttribute("aria-invalid"));
+    form.querySelectorAll(".field-error").forEach((e) => (e.textContent = ""));
+  }
+  function showErrors(errors) {
+    let first;
+    for (const [key, message] of Object.entries(errors)) {
+      const el = form.elements.namedItem(key),
+        hint = document.getElementById(key + "-error");
+      if (el && hint) {
+        el.setAttribute("aria-invalid", "true");
+        hint.textContent = message;
+        if (!first) first = el;
+      }
     }
-    if (input) input.classList.add("error");
+    summary.textContent =
+      errors.form || "Please check the marked fields before sending.";
+    summary.hidden = false;
+    (first || summary).focus();
   }
-
-  function clearErrors(formEl) {
-    formEl.querySelectorAll(".form-group").forEach((g) => {
-      g.classList.remove("has-error");
-    });
-    formEl.querySelectorAll(".error").forEach((el) => el.classList.remove("error"));
-  }
-
-  function buildWhatsApp(data) {
-    const phone = "2348124328229";
-    const lines = [
-      "Hi MoTechy — I'd like to grow my brand online.",
-      "",
-      `Name: ${data.name}`,
-      `Email: ${data.email}`,
-      data.phone ? `Phone: ${data.phone}` : null,
-      data.business ? `Business: ${data.business}` : null,
-      `Service: ${data.service}`,
-      data.budget ? `Budget: ${data.budget}` : null,
-      "",
-      "Message:",
-      data.message,
-    ].filter(Boolean);
-    return `https://wa.me/${phone}?text=${encodeURIComponent(lines.join("\n"))}`;
-  }
-
-  // Prefill service from query string
-  const params = new URLSearchParams(window.location.search);
-  const serviceParam = params.get("service");
-  if (serviceParam && document.getElementById("service")) {
-    const select = document.getElementById("service");
-    const needle = serviceParam.toLowerCase();
-    const opt = Array.from(select.options).find((o) => {
-      const v = (o.value || o.textContent || "").toLowerCase();
-      return v === needle || v.includes(needle) || needle.includes(v);
-    });
-    if (opt) select.value = opt.value || opt.textContent;
-  }
-
-  // Active nav for hash sections on homepage
-  const sections = document.querySelectorAll("section[id]");
-  if (sections.length > 1) {
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const id = entry.target.id;
-          navLinks.forEach((link) => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("href") === `#${id}`
-            );
-          });
-        });
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
-    );
-    sections.forEach((s) => observer.observe(s));
-  }
-})();
+  form.addEventListener("input", (e) => {
+    if (e.target.hasAttribute("aria-invalid")) {
+      e.target.removeAttribute("aria-invalid");
+      const hint = document.getElementById(e.target.id + "-error");
+      if (hint) hint.textContent = "";
+    }
+  });
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (sending) return;
+    clearErrors();
+    const data = Object.fromEntries(new FormData(form));
+    for (const key of Object.keys(data)) data[key] = String(data[key]).trim();
+    const errors = {};
+    if (data.name.length < 2) errors.name = "Please enter your name.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
+      errors.email = "Please enter a valid email address.";
+    if (!data.service) errors.service = "Please choose a service.";
+    if (data.message.length < 10)
+      errors.message = "Please tell us a little more (at least 10 characters).";
+    if (Object.keys(errors).length) {
+      showErrors(errors);
+      return;
+    }
+    sending = true;
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+    form.setAttribute("aria-busy", "true");
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 16000);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+        signal: controller.signal,
+      });
+      const body = await response.json().catch(() => null);
+      if (response.status === 422 && body?.errors) {
+        showErrors(body.errors);
+        return;
+      }
+      if (!response.ok || body?.accepted !== true)
+        throw new Error("NOT_CONFIRMED");
+      form.hidden = true;
+      const success = document.querySelector("#form-success");
+      success.hidden = false;
+      success.focus();
+      track("enquiry_accepted", { service: data.service });
+    } catch {
+      summary.replaceChildren(
+        document.createTextNode(
+          "We couldn’t confirm delivery. Your details are still here. Please try again, or ",
+        ),
+      );
+      const link = document.createElement("a");
+      link.href = "https://wa.me/2348124328229";
+      link.textContent = "contact us on WhatsApp";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.addEventListener("click", () => track("whatsapp_click"));
+      summary.append(link, document.createTextNode("."));
+      summary.hidden = false;
+      summary.focus();
+      track("enquiry_error");
+    } finally {
+      clearTimeout(timeout);
+      sending = false;
+      submit.disabled = false;
+      submit.textContent = "Send enquiry";
+      form.removeAttribute("aria-busy");
+    }
+  });
+}

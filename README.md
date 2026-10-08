@@ -1,83 +1,63 @@
-# MoTechy Website
+# MoTechy
 
-Full marketing website for **MoTechy** — digital growth, branding, and ads for Nigerian founders and SMEs.
+MoTechy’s marketing website: a small, dependency-free static build with a Vercel enquiry endpoint.
 
-## Stack
+## Development
 
-- Static HTML / CSS / JavaScript (no build step)
-- Brand assets from MoTechy brand guidelines
-- Contact form → validation + localStorage lead save + WhatsApp handoff
+Node.js 22 or newer is required; Vercel is configured for Node.js 24.
 
-## Pages
-
-| Page | File | Purpose |
-|------|------|---------|
-| Home | `index.html` | Hero, services, process, work, pricing, FAQ, CTA |
-| Services | `services.html` | Full service catalogue + content pillars |
-| About | `about.html` | Story, values, founder (Moses Adebayo) |
-| Contact | `contact.html` | Contact info + working enquiry form |
-
-## Run locally
-
-From this folder:
-
-```bash
-# Python
-python3 -m http.server 8080
-
-# or Node
-npx serve -l 8080
+```sh
+npm run build
+npm run dev
 ```
 
-Then open [http://localhost:8080](http://localhost:8080).
+Open http://localhost:8080. `npm run build` generates `dist/`. Rebuild after editing source files.
 
-## Brand
-
-- **Colours:** MoTechy Blue `#2563EB`, dark `#111827`, green accent `#22C55E`
-- **Type:** Poppins
-- **Phone / WhatsApp:** +234 812 432 8229
-- **Email:** motechy123@gmail.com
-- **Instagram:** [@motechy_](https://instagram.com/motechy_)
-- **Facebook:** [MoTechy](https://www.facebook.com/61583165513851)
-- **LinkedIn:** [Moses Adebayo](https://www.linkedin.com/in/ma-digital-marketer448899)
-- **Pinterest:** [motechy123](https://www.pinterest.com/motechy123/social-media-designs/)
-- **Tagline:** Digital Growth · Branding · Ads
-
-## Deploy (live on Vercel)
-
-**Production URL:** https://motechy.vercel.app  
-**Project:** `motechy` (account: mosesadebayo319-cmd)  
-**Custom domains added:** `motechy.com`, `www.motechy.com`
-
-### Redeploy after changes
-
-```bash
-export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh"
-cd ~/motechy
-vercel deploy --prod --yes
+```sh
+npm run check
 ```
 
-### Point motechy.com at Vercel (DNS at Spaceship)
+This builds the site and checks links, metadata, asset versioning, enquiry validation and provider failure handling. The same checks run in GitHub Actions and in Vercel’s build command.
 
-Your domain registrar/DNS is currently **Spaceship** (`launch1.spaceship.net` / `launch2.spaceship.net`).  
-Until DNS is updated, SSL for the custom domain cannot issue and the old WordPress site will still show.
+## Source layout
 
-**Recommended records** (keep existing nameservers at Spaceship):
+- `src/data.mjs`: company information, service descriptions, packages and selected work.
+- `src/pages.mjs`: page content and layouts.
+- `src/templates.mjs`: shared navigation, footer and metadata.
+- `src/content/`: the existing long-form articles.
+- `css/styles.css`: responsive visual system.
+- `js/main.js`: accessible menu, form enhancement and analytics events.
+- `api/contact.js`: server-side enquiry endpoint.
+- `lib/contact.mjs`: bounded input validation and FormSubmit relay.
+- `scripts/build.mjs`: static generator, clean canonicals, sitemap and content-hashed assets.
+- `tests/`: automated checks.
 
-| Type | Name | Value | TTL |
-|------|------|-------|-----|
-| **A** | `@` (apex / motechy.com) | `216.198.79.1` | Auto / 300 |
-| **A** | `@` (apex / motechy.com) | `64.29.17.1` | Auto / 300 |
-| **CNAME** | `www` | `867714369acb1c0e.vercel-dns-017.com` | Auto / 300 |
+There are no framework dependencies or client-side rendering requirements. Native HTML navigation, FAQ disclosure elements and form submission work without JavaScript. The build publishes only generated pages and used assets; source files and unused reference artwork are not published.
 
-(If Spaceship only allows one A record on `@`, use `76.76.21.21` as a fallback — Vercel accepts that too.)
+## Enquiries
 
-1. Log in to [Spaceship](https://www.spaceship.com/) → Domains → **motechy.com** → DNS
-2. Remove or replace the existing A/CNAME records that point to the current WordPress host
-3. Add the A + CNAME records above
-4. Wait for propagation (often 5–30 minutes; can take up to 48h)
-5. Vercel will auto-verify and issue HTTPS certificates
+The form sends to `/api/contact`, which validates input, checks the request origin, rejects a filled honeypot, and sends the enquiry through the existing FormSubmit account. Success requires both an HTTP success and explicit provider acceptance. Timeouts, invalid responses and rejected delivery produce a recoverable error. No enquiry or contact details are written to localStorage or logs. WhatsApp remains an explicit action.
 
-**Optional alternative:** switch nameservers to `ns1.vercel-dns.com` and `ns2.vercel-dns.com` (full DNS managed by Vercel).
+The existing FormSubmit recipient must be activated and able to receive email. An accepted provider request is not a guarantee of inbox delivery. Browser and endpoint tests use intercepted requests; they do not send test enquiries to the business.
 
-> **Warning:** Changing DNS will replace the current WordPress site at motechy.com with this new static site.
+This implementation does not add a CRM or database. The email relay is the current delivery dependency. If traffic or abuse warrants it, add provider-backed rate limiting or a verified challenge and durable lead storage; do not use in-memory serverless state as a database or rate limit.
+
+## Deployment configuration
+
+`vercel.json` builds with `npm run check`, publishes `dist/`, and deploys the `api/contact.js` function. Assets have content-derived filenames, so immutable caching is safe. Existing `.html` routes redirect through Vercel clean URLs; old article paths have permanent redirects.
+
+Optional environment variables are documented in `.env.example`:
+
+- `SITE_URL`: canonical origin, currently `https://motechy.vercel.app`. Change only after the custom domain serves the new site.
+- `FORM_EMAIL`: existing recipient, defaults to `motechy123@gmail.com`.
+- `ANALYTICS_ENABLED`: enables Vercel Web Analytics integration. Do not include form content in analytics events.
+
+Analytics events distinguish `enquiry_accepted`, `enquiry_error`, `whatsapp_click`, `phone_click`, and `email_click`. Global Privacy Control and Do Not Track opt out. URLs sent to analytics are stripped of query strings and fragments. Only a bounded `utm_source` label is retained for the current browser session; no personal form values are tracked.
+
+## Content integrity
+
+The public work collection uses MoTechy-branded examples from the existing repository. Images carrying unrelated agency branding are retained in the repository as original reference assets but are excluded from the build. No client performance statistics, third-party endorsements or fabricated testimonials are published. Add verified case studies with permission when source material is available.
+
+## Domain migration
+
+See `docs/DOMAIN-MIGRATION.md`. Domain registration and authoritative DNS remain with Spaceship. Adding the domain to Vercel alone does not change its current WordPress destination.
