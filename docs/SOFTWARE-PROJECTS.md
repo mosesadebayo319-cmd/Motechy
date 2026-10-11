@@ -30,3 +30,10 @@ Only GET requests were used to inspect the published websites. No customer
 account was created and no private records or real conversion jobs were accessed.
 Preview verification confirms public page availability, not every backend feature
 or inbox delivery. Update screenshots and recheck public links when projects change.
+
+## Detailed case studies
+
+Added 11 October 2026: `/work/impactdesk` and `/work/zerotocode`. Both are linked
+from the work collection and their software project entries. Repository-backed
+feature and architecture summaries, public screen captures and source notes are
+documented in [PORTFOLIO-SOURCES.md](PORTFOLIO-SOURCES.md).

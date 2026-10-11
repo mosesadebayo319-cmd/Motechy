@@ -25,6 +25,7 @@ This builds the site and checks links, metadata, asset versioning, enquiry valid
 - `src/pages.mjs`: page content and layouts.
 - `src/software.mjs`: dedicated software-development page, delivery process and project enquiry links.
 - `src/software-projects.mjs`: curated project descriptions, screenshots and verified preview/source links.
+- `src/case-studies.mjs`: ImpactDesk and ZeroToCode case studies, shared layouts and portfolio previews.
 - `src/templates.mjs`: shared navigation, footer and metadata.
 - `src/content/`: the existing long-form articles.
 - `css/styles.css`: responsive visual system.
@@ -54,13 +55,15 @@ Optional environment variables are documented in `.env.example`:
 - `FORM_EMAIL`: existing recipient, defaults to `motechy123@gmail.com`.
 - `ANALYTICS_ENABLED`: enables Vercel Web Analytics integration. Do not include form content in analytics events.
 
-Analytics events distinguish `enquiry_accepted`, `enquiry_error`, `whatsapp_click`, `phone_click`, `email_click`, and `software_project_click`. Project events contain only a curated project ID and the action (preview, source or image). Global Privacy Control and Do Not Track opt out. URLs sent to analytics are stripped of query strings and fragments. Only a bounded `utm_source` label is retained for the current browser session; no personal form values are tracked.
+Analytics events distinguish `enquiry_accepted`, `enquiry_error`, `whatsapp_click`, `phone_click`, `email_click`, and `software_project_click`. Project events contain only a curated project ID and the action (preview, source, image or case-study). Global Privacy Control and Do Not Track opt out. URLs sent to analytics are stripped of query strings and fragments. Only a bounded `utm_source` label is retained for the current browser session; no personal form values are tracked.
 
 ## Content integrity
 
-The public work collection uses MoTechy-branded examples from the existing repository. Images carrying unrelated agency branding are retained in the repository as original reference assets but are excluded from the build. No client performance statistics, third-party endorsements or fabricated testimonials are published. Add verified case studies with permission when source material is available.
+The work collection presents Moses Adebayo’s current Heroes Help role, former MecuryX role and MoTechy’s own content, as confirmed by the owner. Campaign images come from the brands’ public accounts and link to their original posts. See `docs/PORTFOLIO-SOURCES.md` for provenance. Artwork is displayed at its intrinsic ratio without padded frames or text cropping. Unrelated reference artwork remains excluded from the build. No unsupported performance statistics, endorsements or testimonials are published.
 
 The software page showcases independent products and company/personal websites, with actual interface screenshots. See `docs/SOFTWARE-PROJECTS.md` for sources, preview verification and screenshot provenance. Keep unavailable previews as `null`; do not create placeholder links or imply a prototype is a working public service.
+
+Detailed software stories live at `/work/impactdesk` and `/work/zerotocode`. The work collection and software-development page link to both. Their feature and architecture descriptions come from repository source, and distinguish implemented functionality from verified public-preview availability. No private source code or account data is published.
 
 ## Domain migration
 

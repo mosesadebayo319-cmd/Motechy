@@ -3,6 +3,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { softwarePage } from "../src/software.mjs";
+import { caseStudies, caseStudyPage } from "../src/case-studies.mjs";
 import { layout, pageIntro, cta } from "../src/templates.mjs";
 import {
   home,
@@ -100,9 +101,9 @@ const pages = [
   },
   {
     path: "/work",
-    title: "Selected Design & Brand Work — MoTechy",
+    title: "Social Media Work & Software Case Studies — MoTechy",
     description:
-      "Explore MoTechy’s own brand communications, social campaigns and educational carousel designs.",
+      "Explore Moses Adebayo’s social media work for Heroes Help, MecuryX and MoTechy, plus detailed ImpactDesk and ZeroToCode software case studies.",
     body: workPage(asset),
   },
   {
@@ -141,6 +142,48 @@ const pages = [
     body: legal("terms"),
   },
 ];
+for (const study of caseStudies) {
+  pages.push({
+    path: study.path,
+    title: `${study.name} — Software Case Study | MoTechy`,
+    description: study.description,
+    body: caseStudyPage(study, asset),
+    structuredData: [
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        name: `${study.name} — Software case study`,
+        description: study.summary,
+        url: base + study.path,
+        author: { "@type": "Person", name: "Moses Adebayo" },
+        about: {
+          "@type": "SoftwareApplication",
+          name: study.name,
+          url: study.preview,
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: base + "/" },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Work",
+            item: base + "/work",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: study.name,
+            item: base + study.path,
+          },
+        ],
+      },
+    ],
+  });
+}
 for (const a of articles) {
   let content = fs.readFileSync(
     path.join(root, "src/content", a.slug + ".html"),

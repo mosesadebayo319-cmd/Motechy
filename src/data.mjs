@@ -110,80 +110,75 @@ export const services = [
 ];
 export const work = [
   {
-    id: "brand-campaign",
-    image: "work-1",
-    title: "Be the brand",
+    id: "heroes-help",
+    image: "heroes-help",
+    width: 800,
+    height: 533,
+    brand: "Heroes Help",
+    title: "A seat at the event. A salute to service.",
+    type: "Social media management",
+    role: "Current social media manager",
+    description:
+      "Moses currently manages social media for Heroes Help, which supports Nigeria’s Armed Forces community. This Ticket4Troops creative brings the initiative’s message into focus: recognition and access to shared experiences for those who serve.",
+    alt: "Heroes Help Ticket4Troops campaign featuring a service member and the message: A seat at the event. Not just a salute.",
+    source:
+      "https://www.linkedin.com/posts/heroeshelp_ticket4troops-heroeshelp-armedforceswelfare-activity-7487784855229874178-9WAL",
+    sourceLabel: "View campaign post",
+    account: "https://www.facebook.com/Heroeshelp/",
+    accountLabel: "Heroes Help on Facebook",
+  },
+  {
+    id: "mecuryx",
+    image: "mecuryx",
+    width: 1080,
+    height: 1350,
+    brand: "MecuryX",
+    title: "An invitation to learn and build.",
+    type: "Social media management",
+    role: "Former social media manager",
+    description:
+      "Moses previously managed social media for MecuryX. This announcement from the brand’s Instagram introduces its Abuja campus and Learn2Earn collaboration, with a clear location and a focused message for prospective learners.",
+    alt: "MecuryX and Learn2Earn Abuja campus announcement reading: Abuja just got even bigger. Our newest centre is open.",
+    source: "https://www.instagram.com/p/DQq4uVPCOXY/",
+    sourceLabel: "View original post",
+    account: "https://www.instagram.com/mecuryx.africa/",
+    accountLabel: "MecuryX on Instagram",
+  },
+  {
+    id: "motechy-profile",
+    image: "motechy-profile",
+    width: 1080,
+    height: 1352,
+    brand: "MoTechy",
+    title: "Clarity before reach.",
+    type: "Content strategy & social design",
+    role: "Founder · Own-brand content",
+    description:
+      "A practical Instagram carousel for business owners: clarify who you help, the outcome you offer and the next step before chasing more reach. A simple cover gives the idea room to stand out.",
+    alt: "MoTechy carousel cover: Before you chase more reach, audit your profile first.",
+    source: "https://www.instagram.com/p/DdI2j1fDQFB/",
+    sourceLabel: "View the carousel",
+    account: "https://www.instagram.com/motechy_/",
+    accountLabel: "MoTechy on Instagram",
+  },
+  {
+    id: "motechy-independence",
+    image: "motechy-independence",
+    width: 1080,
+    height: 1080,
+    brand: "MoTechy",
+    title: "A moment worth marking.",
     type: "Brand communication",
+    role: "Founder · Own-brand content",
     description:
-      "A bold campaign layout using a focused headline, high-contrast photography and a clear visual hierarchy.",
-    alt: "Be the Brand campaign design with bold typography and black and white portrait photography",
+      "An Independence Day post celebrating Nigeria at 66. National colours, a clear focal point and MoTechy’s identity bring a timely message into the brand’s everyday communication.",
+    alt: "MoTechy Nigeria at 66 Independence Day design in green and white, with a ribbon and outline of Nigeria",
+    source: "https://www.instagram.com/p/Dd8W6BGltqd/",
+    sourceLabel: "View original post",
+    account: "https://www.instagram.com/motechy_/",
+    accountLabel: "MoTechy on Instagram",
   },
-  {
-    id: "content-direction",
-    image: "work-2",
-    title: "Clarity changes the story",
-    type: "Content strategy",
-    description:
-      "A social creative exploring how a clearer content direction changes the way a brand presents itself.",
-    alt: "Colourful MoTechy social creative about clarity and strategy",
-  },
-  {
-    id: "content-system",
-    image: "work-5",
-    title: "A plan for every post",
-    type: "Educational content",
-    description:
-      "An educational carousel that breaks content planning into useful, easy-to-follow steps.",
-    alt: "MoTechy Build Your Content Strategy educational carousel cover",
-  },
-  {
-    id: "weekly-creative",
-    image: "work-3",
-    title: "A fresh start",
-    type: "Social creative",
-    description:
-      "An expressive weekly social design built around colour, energy and a single message.",
-    alt: "New week social media creative",
-  },
-  {
-    id: "weekend-creative",
-    image: "work-4",
-    title: "Weekend energy",
-    type: "Social creative",
-    description:
-      "A campaign-style social post using a strong image and a concise headline.",
-    alt: "MoTechy TGIF weekend social design",
-  },
-  {
-    id: "audience",
-    image: "work-6",
-    title: "Know your audience",
-    type: "Carousel design",
-    description:
-      "A simple educational slide helping business owners think about who their content serves.",
-    alt: "MoTechy educational carousel slide about the audience",
-  },
-  {
-    id: "frequency",
-    image: "work-7",
-    title: "Find your rhythm",
-    type: "Carousel design",
-    description:
-      "A clear typographic treatment for practical guidance on posting frequency.",
-    alt: "MoTechy educational design about posting frequency",
-  },
-  {
-    id: "momentum",
-    image: "work-8",
-    title: "Consistency over time",
-    type: "Brand communication",
-    description:
-      "A restrained quotation layout focused on one idea: providing useful content consistently.",
-    alt: "MoTechy quotation design about consistency",
-  },
-].filter((item) =>
-  ["work-5", "work-6", "work-7", "work-8"].includes(item.image),
-);
+];
 export const packages = [
   {
     name: "Starter",

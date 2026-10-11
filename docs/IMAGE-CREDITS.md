@@ -16,5 +16,6 @@ content are unchanged; CSS crops the hero for each viewport. Responsive images
 are served locally with content hashes, so page rendering does not depend on
 Pexels. Credits link to the original photographs beneath each image.
 
-The founder portrait and MoTechy portfolio artwork remain separate, authentic
-company assets.
+The founder portrait remains an authentic company asset. Social portfolio artwork
+is documented separately in [PORTFOLIO-SOURCES.md](PORTFOLIO-SOURCES.md), including
+the Heroes Help and MecuryX account selections and newer MoTechy Instagram posts.

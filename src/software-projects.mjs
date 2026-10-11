@@ -3,6 +3,7 @@
 export const softwareProjects = [
   {
     id: "impactdesk",
+    caseStudy: "/work/impactdesk",
     title: "ImpactDesk",
     category: "Program management platform",
     description:
@@ -16,6 +17,7 @@ export const softwareProjects = [
   },
   {
     id: "zerotocode",
+    caseStudy: "/work/zerotocode",
     title: "ZeroToCode Academy",
     category: "Interactive learning platform",
     description:
