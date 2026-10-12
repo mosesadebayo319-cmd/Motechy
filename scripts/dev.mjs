@@ -17,6 +17,8 @@ const types = {
   ".ico": "image/x-icon",
   ".xml": "application/xml",
   ".json": "application/json",
+  ".csv": "text/csv; charset=utf-8",
+  ".md": "text/plain; charset=utf-8",
 };
 http
   .createServer(async (req, res) => {

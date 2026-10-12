@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { services, serviceOptions } from "../src/data.mjs";
 import { validateEnquiry } from "../lib/contact.mjs";
+import { publishedArticles } from "../lib/articles.mjs";
 const root = path.resolve("dist");
 function walk(dir) {
   return fs
@@ -47,7 +48,10 @@ function fileFor(url) {
   return p;
 }
 test("Every generated page has one H1, shared navigation, clean metadata and no missing local targets", () => {
-  assert.equal(pages.length, 17);
+  const articles = publishedArticles(
+    JSON.parse(fs.readFileSync("src/content/articles.json", "utf8")),
+  );
+  assert.equal(pages.length, 12 + articles.length);
   for (const file of pages) {
     const html = fs.readFileSync(file, "utf8");
     assert.equal((html.match(/<h1[ >]/g) || []).length, 1, file);

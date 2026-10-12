@@ -1,27 +1,142 @@
 [
   {
+    "slug": "digital-marketing-small-business-nigeria",
+    "title": "Digital marketing for small businesses in Nigeria: a practical 30-day plan",
+    "seoTitle": "Digital Marketing for Small Businesses in Nigeria",
+    "intro": "Build a practical marketing plan around your offer, customer questions, channels and budget. Includes a worked example and an editable planner.",
+    "category": "Digital marketing",
+    "group": "marketing",
+    "service": "Digital Growth",
+    "related": [
+      "social-media-management-cost-nigeria",
+      "seo-small-business-nigeria"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-12",
+    "updatedAt": "2026-10-12",
+    "author": "MoTechy"
+  },
+  {
+    "slug": "social-media-management-cost-nigeria",
+    "title": "Social media management costs in Nigeria: what your monthly fee should cover",
+    "seoTitle": "Social Media Management Cost in Nigeria",
+    "intro": "Compare social media scopes, understand MoTechy’s published packages and calculate management, production and advertising costs separately.",
+    "category": "Social media",
+    "group": "marketing",
+    "service": "Social Media Management",
+    "related": [
+      "digital-marketing-small-business-nigeria",
+      "website-design-cost-nigeria"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-12",
+    "updatedAt": "2026-10-12",
+    "author": "MoTechy"
+  },
+  {
+    "slug": "seo-small-business-nigeria",
+    "title": "SEO for small businesses in Nigeria: what to fix first",
+    "seoTitle": "SEO for Small Businesses in Nigeria: Practical Guide",
+    "intro": "Improve service pages, local discovery, technical foundations and measurement. A practical SEO guide with Google sources and a review template.",
+    "category": "SEO",
+    "group": "marketing",
+    "service": "Digital Growth",
+    "related": [
+      "digital-marketing-small-business-nigeria",
+      "website-design-cost-nigeria"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-12",
+    "updatedAt": "2026-10-12",
+    "author": "MoTechy"
+  },
+  {
+    "slug": "website-design-cost-nigeria",
+    "title": "Website design costs in Nigeria: compare quotes and plan your budget",
+    "seoTitle": "Website Design Cost in Nigeria: Budget & Quote Guide",
+    "intro": "Understand published price examples, website cost drivers, recurring fees and acceptance checks. Includes an editable quote comparison checklist.",
+    "category": "Websites",
+    "group": "software",
+    "service": "Software Development",
+    "related": [
+      "custom-software-development-small-business",
+      "seo-small-business-nigeria"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-12",
+    "updatedAt": "2026-10-12",
+    "author": "MoTechy"
+  },
+  {
+    "slug": "custom-software-development-small-business",
+    "title": "Custom software for a small business: when to build, what to scope and how to start",
+    "seoTitle": "Custom Software Development for Small Businesses",
+    "intro": "Compare existing tools and custom software, define a useful first release, plan ownership and support, and download a software brief template.",
+    "category": "Software development",
+    "group": "software",
+    "service": "Software Development",
+    "related": [
+      "website-design-cost-nigeria",
+      "digital-marketing-small-business-nigeria"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-12",
+    "updatedAt": "2026-10-12",
+    "author": "MoTechy"
+  },
+  {
     "slug": "content-strategy-problem",
     "title": "You don’t have a content problem. You have a strategy problem.",
-    "intro": "Most brands create more content than ever — and still can’t explain where their next client will come from. Volume isn’t the bottleneck. Direction is."
+    "intro": "Most brands create more content than ever — and still can’t explain where their next client will come from. Volume isn’t the bottleneck. Direction is.",
+    "format": "legacy",
+    "status": "published",
+    "category": "Strategy notes",
+    "group": "archive",
+    "author": "Moses Adebayo"
   },
   {
     "slug": "signal-vs-noise",
     "title": "Signal vs noise: the 80/20 of your marketing",
-    "intro": "Most founders don’t need more marketing. They need a shorter list — and the discipline to cut what only looks productive."
+    "intro": "Most founders don’t need more marketing. They need a shorter list — and the discipline to cut what only looks productive.",
+    "format": "legacy",
+    "status": "published",
+    "category": "Strategy notes",
+    "group": "archive",
+    "author": "Moses Adebayo"
   },
   {
     "slug": "7-day-content-starter",
     "title": "7-day content starter",
-    "intro": "A free MoTechy framework so you stop posting randomly. One job per day. Bookmark this page or screenshot it for your team."
+    "intro": "A free MoTechy framework so you stop posting randomly. One job per day. Bookmark this page or screenshot it for your team.",
+    "format": "legacy",
+    "status": "published",
+    "category": "Strategy notes",
+    "group": "archive",
+    "author": "Moses Adebayo"
   },
   {
     "slug": "systems-beat-hacks",
     "title": "The era of hacks is over. Build systems instead.",
-    "intro": "Growth tricks have a shelf life. Systems for content, leads, and learning still compound after the algorithm moves on."
+    "intro": "Growth tricks have a shelf life. Systems for content, leads, and learning still compound after the algorithm moves on.",
+    "format": "legacy",
+    "status": "published",
+    "category": "Strategy notes",
+    "group": "archive",
+    "author": "Moses Adebayo"
   },
   {
     "slug": "consistency-creates-momentum",
     "title": "Consistency creates momentum",
-    "intro": "Virality is a sugar rush. Consistency is compound interest for brands that want clients, not just claps."
+    "intro": "Virality is a sugar rush. Consistency is compound interest for brands that want clients, not just claps.",
+    "format": "legacy",
+    "status": "published",
+    "category": "Strategy notes",
+    "group": "archive",
+    "author": "Moses Adebayo"
   }
 ]

@@ -1,0 +1,353 @@
+<div class="article-answer">
+  <p>
+    <strong
+      >Custom software is worth considering when an important business workflow
+      cannot be handled well by a suitable existing tool.</strong
+    >
+    Define the problem, test off-the-shelf options and estimate the cost of the
+    current process before commissioning a build. The first release should
+    support a complete, useful workflow with clear acceptance criteria.
+  </p>
+</div>
+<p>
+  A small organisation may begin with a spreadsheet, a shared folder and
+  messages between colleagues. That can be entirely sensible. The difficulty
+  starts when nobody can tell which version is current, who approved a change or
+  whether the information in a report matches the underlying records.
+</p>
+<p>
+  Software can help, but “we need an app” is too broad a brief. The business may
+  need a better configured existing service, a small integration, a customer
+  portal or a custom application. This guide explains how to choose, what a
+  development project should include and how to prepare requirements a developer
+  can estimate.
+</p>
+
+<h2 id="start-with-workflow">Describe the workflow before naming features</h2>
+<p>
+  Choose one recurring task and follow it from the trigger to the final outcome.
+  For example: a staff member records an activity, attaches supporting evidence,
+  submits it for review, and a manager uses approved records in a report. Write
+  down who does each step, where information is stored and what happens when
+  something is missing.
+</p>
+<p>
+  That description is more useful than a shopping list of “dashboard, AI,
+  notifications and analytics.” It reveals the actual rules. Who can approve?
+  Can an author approve their own submission? Can a final report change? What
+  should happen if a file upload fails halfway through?
+</p>
+<p>
+  Record the present cost in terms the business understands: staff time,
+  repeated data entry, missed handovers, delays and corrections. Use observed
+  figures where available. If you only have an estimate, label it and record the
+  assumptions rather than presenting it as a measured saving.
+</p>
+<div class="article-answer">
+  <p>
+    <strong>Illustrative starting calculation:</strong> three staff members each
+    spend four hours per week reconciling records. At an assumed internal cost
+    of ₦5,000 per hour, that task represents ₦60,000 per week. This is a
+    planning estimate, not money a new application automatically saves. Some
+    review work will remain, and implementation, training and support have costs
+    too.
+  </p>
+</div>
+
+<h2 id="build-or-buy">Compare buying, configuring and building</h2>
+<p>
+  First test whether a suitable existing product handles the core task. Use a
+  short trial with realistic sample data and the people who will do the work. A
+  feature list may look convincing while the permission model, export format or
+  mobile experience does not fit your requirements.
+</p>
+<div
+  class="article-table"
+  role="region"
+  aria-label="Build versus buy software comparison"
+  tabindex="0"
+>
+  <table>
+    <caption>
+      Choose an approach around the workflow
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Approach</th>
+        <th scope="col">Useful when</th>
+        <th scope="col">Check carefully</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Use an existing product</td>
+        <td>
+          Your process broadly matches a common task such as scheduling or
+          invoicing
+        </td>
+        <td>
+          User fees, permissions, export options, support and required
+          integrations
+        </td>
+      </tr>
+      <tr>
+        <td>Configure or connect tools</td>
+        <td>
+          The main tools work, but information is copied manually between them
+        </td>
+        <td>
+          API limits, failed-sync handling, duplicate records and ownership of
+          the connection
+        </td>
+      </tr>
+      <tr>
+        <td>Build custom software</td>
+        <td>
+          The workflow or rules are important and existing options leave
+          material gaps
+        </td>
+        <td>
+          Delivery scope, maintenance, operational ownership and the total cost
+          over time
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Ask each supplier to demonstrate your highest-risk step. If separate
+  organisations must not see each other’s records, test that separation. If the
+  system must produce a particular report, inspect an actual export. If you need
+  to leave the product later, test the data export before signing a long
+  agreement.
+</p>
+<p>
+  Custom development can offer a closer fit, but it transfers more decisions to
+  the business and its developer. Someone must own the roadmap, support
+  arrangements, hosting costs and future changes. Buying a subscription does not
+  remove those responsibilities entirely; it changes how they are shared.
+</p>
+
+<h2 id="website-or-application">
+  Do you need a website, a portal or an application?
+</h2>
+<p>
+  A public website mainly communicates information and supports actions such as
+  enquiries or purchases. A portal usually gives a defined group access to their
+  information or tasks. A business application manages records and workflows,
+  often with several roles and rules.
+</p>
+<p>
+  The distinction changes the work. A company contact page may require a
+  validated form and dependable delivery. A customer portal may additionally
+  need authentication, access control, account recovery, data retention
+  decisions and a way to handle incidents. Both need testing, but the risk and
+  operational scope differ.
+</p>
+<p>
+  Two independent MoTechy portfolio projects illustrate the range.
+  <a href="/work/zerotocode">ZeroToCode Academy</a> delivers lessons and
+  practice through the browser, with progress stored locally.
+  <a href="/work/impactdesk">ImpactDesk</a> uses a signed-in workspace for
+  program records, evidence, approvals and report snapshots. Their different
+  architectures follow different jobs; neither is a universal template for every
+  business.
+</p>
+
+<h2 id="project-brief">Write a brief that can be estimated</h2>
+<p>
+  You do not need to prescribe a programming language. You do need to make the
+  business requirements visible. A useful first brief includes:
+</p>
+<ol>
+  <li>
+    <strong>Problem and goal:</strong> the task that needs improvement and how
+    you will recognise a useful result.
+  </li>
+  <li>
+    <strong>Users and roles:</strong> who can view, create, edit, approve and
+    administer information.
+  </li>
+  <li>
+    <strong>Workflow:</strong> the normal path, exceptions and decisions at each
+    stage.
+  </li>
+  <li>
+    <strong>Data:</strong> the records, files, existing sources and information
+    that needs protection.
+  </li>
+  <li>
+    <strong>Integrations:</strong> systems the application must read from or
+    write to, and whether access is available.
+  </li>
+  <li>
+    <strong>Devices and conditions:</strong> phones, desktops, expected
+    connectivity and any genuine offline requirement.
+  </li>
+  <li>
+    <strong>Constraints:</strong> available budget, target date, approval
+    process and dependencies.
+  </li>
+  <li>
+    <strong>Handover:</strong> who will operate the system and what training,
+    access and documentation they need.
+  </li>
+</ol>
+<p>
+  Attach anonymised sample forms, report layouts and spreadsheet columns where
+  useful. Avoid sending live customer records merely to illustrate a
+  requirement. A small representative example usually communicates the structure
+  without exposing personal information.
+</p>
+<p>
+  <a href="/assets/resources/software-project-brief.md" download
+    >Download the software project brief template (editable text)</a
+  >. It includes prompts for roles, acceptance criteria, migration and ongoing
+  ownership.
+</p>
+
+<h2 id="first-release">Define a first release that completes a real task</h2>
+<p>
+  A minimum viable product should let someone complete the core job. A
+  collection of attractive screens with disconnected actions does not establish
+  that. Choose a narrow workflow and take it through input, validation, storage,
+  review where needed, and a useful output.
+</p>
+<p>
+  For a booking tool, the first release might support choosing an available
+  slot, submitting required details, receiving a confirmation and cancelling
+  under agreed rules. Advanced recommendations or a loyalty scheme can wait.
+  Failure handling for a double booking cannot wait if appointments are the
+  central promise.
+</p>
+<p>
+  Separate requirements into essential for launch, useful next and explicitly
+  deferred. Record why each essential item is needed. This makes scope
+  discussions more productive than describing every request as urgent.
+</p>
+<p>
+  Agree how changes are handled. A newly discovered requirement may be valid,
+  but it can affect cost, timing and testing. Ask the developer to explain those
+  effects before the work is added. Keep a visible list so important decisions
+  are not scattered through message threads.
+</p>
+
+<h2 id="acceptance-criteria">Turn requirements into acceptance criteria</h2>
+<p>
+  “The system must be secure and easy to use” is an intention. Acceptance
+  criteria describe observable behaviour. They help both the business and the
+  developer know what must work before a milestone is complete.
+</p>
+<ul>
+  <li>A staff member can save a draft without submitting it for approval.</li>
+  <li>
+    A reviewer can return a submission with a reason that its author can read.
+  </li>
+  <li>
+    A user in one organisation cannot retrieve another organisation’s records by
+    changing a link.
+  </li>
+  <li>
+    A failed save preserves the entered information and explains how to retry.
+  </li>
+  <li>
+    A report export includes only records meeting the agreed status and date
+    rules.
+  </li>
+  <li>
+    A backup can be restored into an isolated test environment and checked.
+  </li>
+</ul>
+<p>
+  These are example criteria, not a specification for every application. Adapt
+  them to your workflow, especially the exceptions. The
+  <a
+    href="https://owasp.org/projects/asvs"
+    target="_blank"
+    rel="noopener noreferrer"
+    >OWASP Application Security Verification Standard</a
+  >
+  provides a structured reference for technical security requirements. Ask your
+  developer which controls apply and how they will be verified, rather than
+  treating a framework name as proof of security.
+</p>
+
+<h2 id="cost-and-timeline">
+  What determines software development cost and timing?
+</h2>
+<p>
+  The number of user roles, complexity of business rules, quality of existing
+  data, external integrations, reporting requirements and operational needs all
+  affect the work. A small interface can hide complicated rules. A larger set of
+  straightforward screens may be easier to estimate.
+</p>
+<p>
+  Include discovery, design, implementation, testing, data migration, deployment
+  and handover in the discussion. If an integration depends on another
+  provider’s approval or documentation, record that dependency. Do not build a
+  launch promise around access nobody has confirmed.
+</p>
+<p>
+  Compare the total cost over an agreed period. Include the initial project,
+  hosting, database and storage, third-party services, maintenance, training,
+  support and expected changes. For an existing product, include seat fees,
+  configuration, integrations and exit costs. Use the same timeframe for both
+  options.
+</p>
+<p>
+  A proposal can divide the project into milestones: confirmed requirements,
+  reviewed prototype, a tested core workflow, and a release with handover.
+  Define the acceptance evidence for each. The right cadence depends on scope; a
+  standard number of weeks cannot honestly cover every custom application.
+</p>
+
+<h2 id="ownership-and-support">Agree ownership and support before launch</h2>
+<p>
+  The contract should explain access to source code, data, hosting and
+  third-party accounts, including any licences or components that cannot be
+  transferred. Specify who pays recurring bills and who can administer the
+  system. A business should know how it would continue operating if its
+  developer became unavailable.
+</p>
+<p>
+  Plan the operational work too. Who receives error alerts? Who handles a failed
+  payment or an email delivery problem? What is backed up, how often, and how is
+  restoration checked? What response can you expect outside normal hours? These
+  answers affect both service quality and support cost.
+</p>
+<p>
+  Training should cover the real tasks staff perform, including correcting
+  mistakes and escalating problems. Start a pilot with a manageable group,
+  collect specific feedback and fix workflow problems before a wider rollout. A
+  successful deployment is the beginning of operation, not evidence that
+  adoption has already happened.
+</p>
+
+<h2 id="questions">Questions before commissioning software</h2>
+<h3>Should every business build its own software?</h3>
+<p>
+  No. A suitable existing product may be faster to adopt and easier to support.
+  Custom development should address a meaningful gap, with a clear owner and a
+  defensible budget.
+</p>
+<h3>Should the application include AI?</h3>
+<p>
+  Only when it solves a defined task and the results can be evaluated. Consider
+  accuracy, review, privacy, provider costs and a fallback. AI is not a
+  substitute for clear business rules or reliable storage.
+</p>
+<h3>Can we build in stages?</h3>
+<p>
+  Yes. Keep the first release narrow enough to test properly, but complete
+  enough to do useful work. Agree what later phases may require so an early
+  shortcut does not quietly become a permanent constraint.
+</p>
+<h3>What is the next step with MoTechy?</h3>
+<p>
+  Share the problem, the users, the current process and any constraints. We can
+  discuss the scope and whether a website, integration or application is the
+  appropriate starting point.
+  <a href="/contact?service=Software%20Development"
+    >Start a software project conversation</a
+  >.
+</p>

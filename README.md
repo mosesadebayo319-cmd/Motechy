@@ -27,7 +27,10 @@ This builds the site and checks links, metadata, asset versioning, enquiry valid
 - `src/software-projects.mjs`: curated project descriptions, screenshots and verified preview/source links.
 - `src/case-studies.mjs`: ImpactDesk and ZeroToCode case studies, shared layouts and portfolio previews.
 - `src/templates.mjs`: shared navigation, footer and metadata.
-- `src/content/`: the existing long-form articles.
+- `src/insights.mjs`: Insights index, guide layouts, article schema and RSS.
+- `src/content/`: article fragments, publication catalogue and editorial backlog.
+- `assets/resources/`: editable planners and checklists.
+- `lib/articles.mjs`: publication status, dates and related-article validation.
 - `css/styles.css`: responsive visual system.
 - `js/main.js`: accessible menu, form enhancement and analytics events.
 - `api/contact.js`: server-side enquiry endpoint.
@@ -36,6 +39,12 @@ This builds the site and checks links, metadata, asset versioning, enquiry valid
 - `tests/`: automated checks.
 
 There are no framework dependencies or client-side rendering requirements. Native HTML navigation, FAQ disclosure elements and form submission work without JavaScript. The build publishes only generated pages and used assets; source files and unused reference artwork are not published.
+
+## Insights publishing
+
+The initial expanded library includes five detailed marketing/software guides and five earlier notes. Published catalogue entries generate article pages, index cards, canonical metadata, BlogPosting/BreadcrumbList schema, sitemap dates and `/feed.xml`. Drafts are excluded. Future publication dates are rejected rather than silently publishing early; scheduled publication requires a new reviewed content commit and deployment.
+
+See [keyword research](docs/SEO-RESEARCH.md) for the evidence and its limits, and [the editorial workflow](docs/EDITORIAL-WORKFLOW.md) for research, writing, testing and publishing. The backlog provides twelve distinct follow-up topics. The recurring publishing task is configured in ChatGPT automations, not in the website runtime.
 
 ## Enquiries
 

@@ -4,6 +4,14 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { softwarePage } from "../src/software.mjs";
 import { caseStudies, caseStudyPage } from "../src/case-studies.mjs";
+import { publishedArticles } from "../lib/articles.mjs";
+import {
+  articleMetrics,
+  insightsIndex,
+  guidePage,
+  articleSchema,
+  rssFeed,
+} from "../src/insights.mjs";
 import { layout, pageIntro, cta } from "../src/templates.mjs";
 import {
   home,
@@ -11,7 +19,6 @@ import {
   workPage,
   about,
   contact,
-  blogIndex,
   legal,
 } from "../src/pages.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -46,9 +53,19 @@ function asset(src) {
   cache.set(src, name);
   return name;
 }
-const articles = JSON.parse(
-  fs.readFileSync(path.join(root, "src/content/articles.json"), "utf8"),
-);
+const articles = publishedArticles(
+  JSON.parse(
+    fs.readFileSync(path.join(root, "src/content/articles.json"), "utf8"),
+  ),
+).map((article) => ({
+  ...article,
+  ...articleMetrics(
+    fs.readFileSync(
+      path.join(root, "src/content", article.slug + ".html"),
+      "utf8",
+    ),
+  ),
+}));
 const pages = [
   {
     path: "/",
@@ -122,10 +139,10 @@ const pages = [
   },
   {
     path: "/blog",
-    title: "Marketing Insights for Nigerian Businesses — MoTechy",
+    title: "Marketing, SEO & Software Guides for Nigerian Businesses — MoTechy",
     description:
-      "Practical notes on brand, content and digital marketing, plus a free seven-day content planning guide for small businesses.",
-    body: blogIndex(articles, asset),
+      "Practical guides to digital marketing, SEO, social media costs, websites and custom software. Free planning templates for Nigerian business owners.",
+    body: insightsIndex(articles, asset),
   },
   {
     path: "/privacy",
@@ -226,9 +243,15 @@ for (const a of articles) {
     );
   pages.push({
     path: "/blog/" + a.slug,
-    title: a.title.replace(/<[^>]+>/g, "") + " — MoTechy",
+    title: (a.seoTitle || a.title).replace(/<[^>]+>/g, "") + " — MoTechy",
     description: a.intro.replace(/<[^>]+>/g, ""),
-    body: `<div class="article-page">${pageIntro("Insights · By Moses Adebayo", a.title, a.intro)}<article class="article-body">${content}</article></div>${cta()}`,
+    body:
+      a.format === "guide"
+        ? guidePage(a, content, articles)
+        : `<div class="article-page">${pageIntro("Insights · By Moses Adebayo", a.title, a.intro)}<article class="article-body">${content}</article></div>${cta()}`,
+    structuredData: articleSchema(a, base, asset("assets/images/og-image.jpg")),
+    publishedAt: a.publishedAt,
+    updatedAt: a.updatedAt,
   });
 }
 pages.push({
@@ -259,10 +282,14 @@ fs.writeFileSync(
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     pages
       .filter((p) => !p.noindex)
-      .map((p) => `  <url><loc>${base + p.path}</loc></url>`)
+      .map(
+        (p) =>
+          `  <url><loc>${base + p.path}</loc>${p.updatedAt ? `<lastmod>${p.updatedAt}</lastmod>` : ""}</url>`,
+      )
       .join("\n") +
     "\n</urlset>\n",
 );
+fs.writeFileSync(path.join(out, "feed.xml"), rssFeed(articles, base));
 fs.writeFileSync(
   path.join(out, "robots.txt"),
   `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${base}/sitemap.xml\n`,
