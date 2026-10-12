@@ -8,7 +8,12 @@ import { serviceOptions } from "../lib/service-options.mjs";
 const catalogue = JSON.parse(
   fs.readFileSync("src/content/articles.json", "utf8"),
 );
-const example = { ...catalogue.find((a) => a.format === "guide"), related: [] };
+const example = {
+  ...catalogue.find((a) => a.format === "guide"),
+  related: [],
+  publishedAt: "2026-10-12",
+  updatedAt: "2026-10-12",
+};
 
 test("Only explicitly published articles are eligible for pages, search and feeds", () => {
   const draft = { slug: "unfinished-article", status: "draft" };
