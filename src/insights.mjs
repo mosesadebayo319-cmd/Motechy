@@ -1,4 +1,5 @@
 import { button, cta, escape, pageIntro } from "./templates.mjs";
+import { coverImage, guideCover } from "./article-media.mjs";
 
 export function articleMetrics(content) {
   const text = content.replace(/<[^>]*>/g, " ").trim();
@@ -15,8 +16,8 @@ export function displayDate(value) {
   }).format(new Date(value + "T12:00:00Z"));
 }
 
-function articleCard(article, level = "h3") {
-  return `<article class="insight-card"><p class="eyebrow">${escape(article.category)}</p><${level}><a href="/blog/${article.slug}">${escape(article.title)}</a></${level}><p>${escape(article.intro)}</p><div class="insight-card-meta">${article.publishedAt ? `<time datetime="${article.publishedAt}">${displayDate(article.publishedAt)}</time>` : "<span>From the archive</span>"}<span>${article.readingMinutes} min read</span></div><a class="text-link" href="/blog/${article.slug}" aria-label="Read: ${escape(article.title)}">Read guide</a></article>`;
+function articleCard(article, asset, level = "h3") {
+  return `<article class="insight-card">${article.cover ? `<a class="insight-card-image" href="/blog/${article.slug}" tabindex="-1" aria-hidden="true">${coverImage(article.cover, asset, { decorative: true })}</a>` : ""}<p class="eyebrow">${escape(article.category)}</p><${level}><a href="/blog/${article.slug}">${escape(article.title)}</a></${level}><p>${escape(article.intro)}</p><div class="insight-card-meta">${article.publishedAt ? `<time datetime="${article.publishedAt}">${displayDate(article.publishedAt)}</time>` : "<span>From the archive</span>"}<span>${article.readingMinutes} min read</span></div><a class="text-link" href="/blog/${article.slug}" aria-label="Read: ${escape(article.title)}">Read guide</a></article>`;
 }
 
 export function insightsIndex(articles, asset) {
@@ -50,7 +51,7 @@ export function insightsIndex(articles, asset) {
         (group) =>
           `<section class="insights-group container" id="${group.id}"><div class="section-heading"><div><p class="eyebrow">${group.label}</p><h2>${group.title}</h2></div><p>${group.description}</p></div><div class="insights-grid">${articles
             .filter((a) => a.group === group.id)
-            .map((a) => articleCard(a))
+            .map((a) => articleCard(a, asset))
             .join("")}</div></section>`,
       )
       .join("")}
@@ -92,18 +93,18 @@ export function insightsIndex(articles, asset) {
       .filter(
         (a) => a.group === "archive" && a.slug !== "7-day-content-starter",
       )
-      .map((a) => articleCard(a))
+      .map((a) => articleCard(a, asset))
       .join("")}</div></section>${cta()}`;
 }
 
-export function guidePage(article, content, articles) {
+export function guidePage(article, content, articles, asset) {
   const headings = [...content.matchAll(/<h2 id="([^"]+)">([^<]+)<\/h2>/g)];
   const related = article.related
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean);
   return `<article class="guide-page"><header class="guide-header container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/blog">Insights</a><span aria-hidden="true">/</span><span>${escape(article.category)}</span></nav><p class="eyebrow">${escape(article.category)}</p><h1>${escape(article.title)}</h1><p class="guide-intro">${escape(article.intro)}</p><div class="guide-meta"><a href="/about" rel="author">By ${escape(article.author)}</a><span>Published <time datetime="${article.publishedAt}">${displayDate(article.publishedAt)}</time></span>${article.updatedAt !== article.publishedAt ? `<span>Updated <time datetime="${article.updatedAt}">${displayDate(article.updatedAt)}</time></span>` : ""}<span>${article.readingMinutes} min read</span></div></header>
-      <div class="guide-layout container"><aside class="guide-contents"><nav aria-label="Article contents"><h2>In this guide</h2><ol>${headings.map(([, id, title]) => `<li><a href="#${id}">${escape(title)}</a></li>`).join("")}</ol></nav></aside><div class="article-body guide-body">${content}<div class="guide-author"><p><strong>About MoTechy</strong></p><p>MoTechy is an Abuja studio working across brand strategy, digital marketing and software development. <a href="/work">Explore the work</a> or <a href="/about">meet founder Moses Adebayo</a>.</p></div></div></div></article>
-      <section class="guide-related container"><p class="eyebrow">Related reading</p><h2>Keep planning your next step.</h2><div class="insights-grid">${related.map((a) => articleCard(a)).join("")}</div><a class="text-link section-link" href="/blog">Back to all Insights</a></section><section class="closing"><div class="container closing-inner"><div><p class="eyebrow">Put the plan to work</p><h2>Tell us what<br>you need to improve.</h2></div><div><p>A clear brief is a useful beginning. We’ll discuss your priorities and agree the right scope.</p>${button("Discuss your project", "/contact?service=" + encodeURIComponent(article.service))}</div></div></section>`;
+      ${guideCover(article, asset)}<div class="guide-layout container"><aside class="guide-contents"><nav aria-label="Article contents"><h2>In this guide</h2><ol>${headings.map(([, id, title]) => `<li><a href="#${id}">${escape(title)}</a></li>`).join("")}</ol></nav></aside><div class="article-body guide-body">${content}<div class="guide-author"><p><strong>About MoTechy</strong></p><p>MoTechy is an Abuja studio working across brand strategy, digital marketing and software development. <a href="/work">Explore the work</a> or <a href="/about">meet founder Moses Adebayo</a>.</p></div></div></div></article>
+      <section class="guide-related container"><p class="eyebrow">Related reading</p><h2>Keep planning your next step.</h2><div class="insights-grid">${related.map((a) => articleCard(a, asset)).join("")}</div><a class="text-link section-link" href="/blog">Back to all Insights</a></section><section class="closing"><div class="container closing-inner"><div><p class="eyebrow">Put the plan to work</p><h2>Tell us what<br>you need to improve.</h2></div><div><p>A clear brief is a useful beginning. We’ll discuss your priorities and agree the right scope.</p>${button("Discuss your project", "/contact?service=" + encodeURIComponent(article.service))}</div></div></section>`;
 }
 
 export function articleSchema(article, base, image) {

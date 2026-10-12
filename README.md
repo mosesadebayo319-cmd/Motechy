@@ -28,6 +28,7 @@ This builds the site and checks links, metadata, asset versioning, enquiry valid
 - `src/case-studies.mjs`: ImpactDesk and ZeroToCode case studies, shared layouts and portfolio previews.
 - `src/templates.mjs`: shared navigation, footer and metadata.
 - `src/insights.mjs`: Insights index, guide layouts, article schema and RSS.
+- `src/article-media.mjs`: responsive covers and image credits for guides and cards.
 - `src/content/`: article fragments, publication catalogue and editorial backlog.
 - `assets/resources/`: editable planners and checklists.
 - `lib/articles.mjs`: publication status, dates and related-article validation.

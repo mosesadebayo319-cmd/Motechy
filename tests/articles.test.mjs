@@ -55,6 +55,10 @@ test("Publication rejects invalid dates and broken enquiry destinations", () => 
       ),
     /enquiry service/,
   );
+  assert.throws(
+    () => publishedArticles([{ ...example, cover: undefined }], "2026-10-12"),
+    /cover image/,
+  );
 });
 
 test("Published guides expose consistent dates, schema, reading journeys and feed entries", () => {
@@ -81,6 +85,26 @@ test("Published guides expose consistent dates, schema, reading journeys and fee
     assert.equal(posting.dateModified, article.updatedAt);
     assert.ok(schema.find((s) => s["@type"] === "BreadcrumbList"));
     if (article.format !== "guide") continue;
+    const manifest = JSON.parse(
+      fs.readFileSync("dist/build-manifest.json", "utf8"),
+    );
+    const shareImage = manifest.assets[article.cover.share];
+    assert.ok(shareImage, "Sharing image must be in the public build");
+    assert.ok(posting.image.endsWith(shareImage));
+    assert.ok(
+      html.includes(`<meta property="og:image" content="${posting.image}">`),
+    );
+    assert.ok(
+      html.includes(`<meta name="twitter:image" content="${posting.image}">`),
+    );
+    assert.ok(html.includes(`alt="${escape(article.cover.alt)}"`));
+    assert.ok(html.includes(`href="${escape(article.cover.source)}"`));
+    for (const width of [480, 800, 1200]) {
+      const source = manifest.assets[`${article.cover.image}-${width}.webp`];
+      assert.ok(source && fs.existsSync("dist" + source));
+      assert.ok(html.includes(`${source} ${width}w`));
+      assert.ok(index.includes(`${source} ${width}w`));
+    }
     assert.ok(html.includes(`<time datetime="${article.publishedAt}">`));
     assert.ok(html.includes(`By ${escape(article.author)}`));
     assert.ok(serviceOptions.includes(article.service));

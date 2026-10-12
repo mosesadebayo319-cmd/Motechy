@@ -15,7 +15,16 @@
     "status": "published",
     "publishedAt": "2026-10-12",
     "updatedAt": "2026-10-12",
-    "author": "MoTechy"
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/marketing",
+      "share": "assets/images/insights/marketing-share.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Colleagues reviewing a plan together around a laptop",
+      "credit": "Yan Krukau / Pexels",
+      "source": "https://www.pexels.com/photo/a-group-of-people-planning-7698710/"
+    }
   },
   {
     "slug": "social-media-management-cost-nigeria",
@@ -33,7 +42,16 @@
     "status": "published",
     "publishedAt": "2026-10-12",
     "updatedAt": "2026-10-12",
-    "author": "MoTechy"
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/social",
+      "share": "assets/images/insights/social-share.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "A content creator adjusting a smartphone beside a ring light and laptop",
+      "credit": "RDNE Stock project / Pexels",
+      "source": "https://www.pexels.com/photo/male-blogger-fixing-the-position-of-a-smartphone-8369771/"
+    }
   },
   {
     "slug": "seo-small-business-nigeria",
@@ -51,7 +69,16 @@
     "status": "published",
     "publishedAt": "2026-10-12",
     "updatedAt": "2026-10-12",
-    "author": "MoTechy"
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/seo",
+      "share": "assets/images/insights/seo-share.jpg",
+      "width": 1200,
+      "height": 795,
+      "alt": "Printed charts and a notebook beside a laptop on a desk",
+      "credit": "Lukas Blazek / Pexels",
+      "source": "https://www.pexels.com/photo/notebook-and-charts-669613/"
+    }
   },
   {
     "slug": "website-design-cost-nigeria",
@@ -69,7 +96,16 @@
     "status": "published",
     "publishedAt": "2026-10-12",
     "updatedAt": "2026-10-12",
-    "author": "MoTechy"
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/website",
+      "share": "assets/images/insights/website-share.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Website wireframe sketches in a notebook beside a phone and pen",
+      "credit": "picjumbo.com / Pexels",
+      "source": "https://www.pexels.com/photo/notebook-beside-the-iphone-on-table-196644/"
+    }
   },
   {
     "slug": "custom-software-development-small-business",
@@ -87,7 +123,16 @@
     "status": "published",
     "publishedAt": "2026-10-12",
     "updatedAt": "2026-10-12",
-    "author": "MoTechy"
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/software",
+      "share": "assets/images/insights/software-share.jpg",
+      "width": 1200,
+      "height": 795,
+      "alt": "Hands typing on a laptop displaying website code",
+      "credit": "Lukas Blazek / Pexels",
+      "source": "https://www.pexels.com/photo/person-encoding-in-laptop-574071/"
+    }
   },
   {
     "slug": "content-strategy-problem",

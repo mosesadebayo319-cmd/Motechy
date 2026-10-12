@@ -247,9 +247,17 @@ for (const a of articles) {
     description: a.intro.replace(/<[^>]+>/g, ""),
     body:
       a.format === "guide"
-        ? guidePage(a, content, articles)
+        ? guidePage(a, content, articles, asset)
         : `<div class="article-page">${pageIntro("Insights · By Moses Adebayo", a.title, a.intro)}<article class="article-body">${content}</article></div>${cta()}`,
-    structuredData: articleSchema(a, base, asset("assets/images/og-image.jpg")),
+    structuredData: articleSchema(
+      a,
+      base,
+      asset(a.cover?.share || "assets/images/og-image.jpg"),
+    ),
+    socialImage: a.cover?.share,
+    socialImageAlt: a.cover?.alt,
+    socialImageWidth: a.cover?.width,
+    socialImageHeight: a.cover?.height,
     publishedAt: a.publishedAt,
     updatedAt: a.updatedAt,
   });

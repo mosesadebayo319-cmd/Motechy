@@ -8,7 +8,7 @@ The owner has authorised research, writing and publication to `mosesadebayo319-c
 2. Compute today's calendar date in `Africa/Lagos`. If the backlog records an automated publication today, verify its deployed URL and report it rather than publishing a duplicate. Prefer the next queued topic in the backlog; alternate marketing and software where feasible. Check existing articles for overlapping intent first. When the backlog is exhausted, research distinct questions and extend it.
 3. Research current search intent and primary sources. Record the queries, access date, URLs and specific factual claims in `docs/editorial/YYYY-MM-DD-slug.md`. Treat search snippets and autocomplete as discovery signals, not measured search volume. Read the sources supporting claims. Recheck changing prices, platform policies and technical instructions.
 4. Write one original, useful article. Answer the question early, explain decisions and tradeoffs, include a specific worked example or checklist, link to relevant MoTechy work/services and at least two related articles. Aim for the depth the question needs; roughly 1,200–1,800 words is a starting point, never a padding quota. Use natural Nigerian English and local context where it is meaningful. No keyword stuffing, near-duplicate city pages, copied competitor prose, fabricated experience, client outcomes, market statistics, prices or guarantees. Clearly mark hypothetical examples. AI-detector scores are not a quality target. Use `MoTechy` as the organisation byline unless an actual named author supplied/reviewed the piece; do not claim human review that did not happen.
-5. Add `src/content/SLUG.html` as an HTML fragment, with no outer document or H1. Use descriptive H2 IDs for the automatic contents list. No scripts, inline styles or embedded untrusted HTML. Escape text and use source links. For wide tables, follow the existing accessible `.article-table` region pattern. A useful resource may go under `assets/resources/` and be linked with `download`; do not collect personal information for downloads.
+5. Add `src/content/SLUG.html` as an HTML fragment, with no outer document or H1. Use descriptive H2 IDs for the automatic contents list. No scripts, inline styles or embedded untrusted HTML. Escape text and use source links. For wide tables, follow the existing accessible `.article-table` region pattern. Add a relevant, licensed cover and at least one useful supporting visual (an authentic public screenshot, explanatory diagram or relevant photograph). Follow the image requirements below. A useful resource may go under `assets/resources/` and be linked with `download`; do not collect personal information for downloads.
 6. Add the catalogue entry below. Set `status: "published"` only once content is ready to ship. Use actual publication dates, no future-dated public content. Keep unfinished entries as `draft`; drafts are excluded from all generated public outputs. Update the backlog item to `published` with `publishedAt` and `publicationMode: "scheduled"` in the same commit. When updating an existing article, preserve its `publishedAt` and change `updatedAt` only for a substantive revision.
 7. Run `npm run check` with Node 22+. Inspect the built index, article, sitemap and `/feed.xml`. Test the article at mobile and desktop sizes, keyboard/contents navigation, downloadable resources, schema and the selected enquiry service. Check for page overflow and source links. Never send a real test enquiry. Fix failing checks before publishing.
 8. Publish a focused commit to `main` using authenticated Git or the connected GitHub Git Data tools. Use an optimistic lease: update the ref only if `main` still equals the starting parent. With the MCP tools, use `github_update_ref` with `force: false` and `expected_sha` equal to that parent. If the branch advanced, refresh, preserve the other changes and rerun checks. Do not force-push or replace unrelated site changes.
@@ -31,13 +31,32 @@ The owner has authorised research, writing and publication to `mosesadebayo319-c
   "status": "draft",
   "publishedAt": "YYYY-MM-DD",
   "updatedAt": "YYYY-MM-DD",
-  "author": "MoTechy"
+  "author": "MoTechy",
+  "cover": {
+    "image": "assets/images/insights/descriptive-topic-slug",
+    "share": "assets/images/insights/descriptive-topic-slug-share.jpg",
+    "width": 1200,
+    "height": 800,
+    "alt": "A concise description of what is actually visible",
+    "credit": "Photographer / source",
+    "source": "https://example.com/original-photo-page"
+  }
 }
 ```
 
 Use group `marketing` for marketing/social/SEO and `software` for websites/software. `archive` is for the original short notes. `service` must match `lib/service-options.mjs`. Related slugs must already be published and must not include the article itself. Change the sample dates before publication; the build rejects invalid, future and reversed guide dates.
 
 The generator creates the index cards, reading time, article contents, byline/dates, related reading, service CTA, canonical/OG metadata, BlogPosting and BreadcrumbList schema, sitemap entry and RSS item. No manual generated-file edits are needed. The build erases and recreates `dist/`, so draft removal does not leave stale article files.
+
+## Images
+
+The owner requested professional article imagery. Each published guide requires a `cover` entry. Choose an image that explains the topic; verify its licence and source rather than copying an arbitrary search result. Record attribution, source URL, licence and access date in `docs/IMAGE-CREDITS.md`. Do not imply stock subjects are MoTechy staff or clients. Use authentic, public screens for project examples, avoiding private data and fabricated dashboards.
+
+Store cover variants as `assets/images/insights/NAME-{480,800,1200}.webp` and a 1200-pixel-wide `NAME-share.jpg`. `cover.image` is the prefix without the size/extension. `width` and `height` must match the full-size photo's actual dimensions, not an assumed aspect ratio. `source` is the HTTPS original page, and `credit` identifies the photographer and platform (or the actual owner). Keep WebP variants suitably compressed; aim below 150 KB for the 1200-pixel cover. `src/article-media.mjs` creates responsive cards/covers; article schema and sharing metadata use the JPEG.
+
+Supporting figures belong beside the relevant explanation. Use `figure`/`figcaption`, accurate alt text and explicit width/height. Load body images lazily, preserve screenshot proportions and offer a full-size image link. Image `src` and full-size `href` paths under `/assets/` are hashed automatically. For diagrams, reuse the semantic `.article-visual`, `.visual-steps` or `.budget-parts` patterns with real HTML text, so the explanation works on mobile, at larger text sizes and with assistive technology. Label hypothetical figures. Avoid decorative graphs that suggest invented results.
+
+Before publishing, check image decoding, captions/credits, cropping, no page overflow, mobile image selection and the article-specific OG/Twitter/schema image URLs. Verify new images return HTTP 200 after deployment. A missing cover or missing image file must be fixed before publishing.
 
 ## Review the programme
 
