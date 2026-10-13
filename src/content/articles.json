@@ -1,5 +1,32 @@
 [
   {
+    "slug": "google-business-profile-nigeria",
+    "title": "Google Business Profile in Nigeria: setup, verification and monthly care",
+    "seoTitle": "Google Business Profile Nigeria: Setup & Verification",
+    "intro": "Set up an eligible business profile, prepare for verification and keep it accurate. Includes an Abuja service-business example and an editable checklist.",
+    "category": "Local SEO",
+    "group": "marketing",
+    "service": "Digital Growth",
+    "related": [
+      "seo-small-business-nigeria",
+      "digital-marketing-small-business-nigeria"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-13",
+    "updatedAt": "2026-10-13",
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/google-business-profile",
+      "share": "assets/images/insights/google-business-profile-share.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "A woman hanging an open sign on a blue wooden shop door",
+      "credit": "Ketut Subiyanto / Pexels",
+      "source": "https://www.pexels.com/photo/woman-holding-brown-wooden-signage-4473097/"
+    }
+  },
+  {
     "slug": "digital-marketing-small-business-nigeria",
     "title": "Digital marketing for small businesses in Nigeria: a practical 30-day plan",
     "seoTitle": "Digital Marketing for Small Businesses in Nigeria",

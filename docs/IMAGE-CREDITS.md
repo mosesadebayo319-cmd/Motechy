@@ -39,3 +39,9 @@ Pexels' image CDN supplied 480, 800 and 1200-pixel WebP variants and a 1200-pixe
 The marketing timeline, social-media budget breakdown and SEO journey are original HTML/CSS diagrams with readable text and semantic lists. The budget is explicitly illustrative, matching the assumptions in the article. They do not reproduce third-party diagrams or claim measured outcomes.
 
 `motechy-website-example.jpg` is a browser capture of MoTechy's homepage on 12 October 2026, at 1280 × 900. The custom-software guide reuses the actual public ImpactDesk workflow screen in `assets/images/case-studies/impactdesk-guide-1280.webp`, documented in [PORTFOLIO-SOURCES.md](PORTFOLIO-SOURCES.md). Screenshots keep their natural proportions, link to full-size versions, and include contextual captions. No private account or customer data was accessed.
+
+## Google Business Profile guide
+
+Selected and checked on 13 October 2026: [Ketut Subiyanto — Woman Holding Brown Wooden Signage](https://www.pexels.com/photo/woman-holding-brown-wooden-signage-4473097/), under the [Pexels license](https://www.pexels.com/license/). The shop-door photograph is illustrative; it does not depict a Nigerian business or MoTechy client, and implies no endorsement. A visible caption credits the photographer.
+
+The CDN supplied `assets/images/insights/google-business-profile-{480,800,1200}.webp` and `google-business-profile-share.jpg`, preserving the photo's content and colours. Full-size dimensions are 1200 × 800; the WebP variants are approximately 22–94 KB. These files are served locally with content hashes. The setup-sequence diagram is original semantic HTML, with real text and no invented performance data.
