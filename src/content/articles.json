@@ -1,5 +1,32 @@
 [
   {
+    "slug": "website-vs-web-application",
+    "title": "Website vs web application: which does your Nigerian business need?",
+    "seoTitle": "Website vs Web Application: A Business Decision Guide",
+    "intro": "Compare websites and web applications by the work they must do. Includes an Abuja booking example, practical acceptance checks and a free decision sheet.",
+    "category": "Software planning",
+    "group": "software",
+    "service": "Software Development",
+    "related": [
+      "website-design-cost-nigeria",
+      "custom-software-development-small-business"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/website-vs-app",
+      "share": "assets/images/insights/website-vs-app-share.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "A notebook and pen in front of screens showing a diagram and code",
+      "credit": "Jakub Zerdzicki / Pexels",
+      "source": "https://www.pexels.com/photo/creative-workspace-with-notebooks-and-monitors-38888711/"
+    }
+  },
+  {
     "slug": "google-business-profile-nigeria",
     "title": "Google Business Profile in Nigeria: setup, verification and monthly care",
     "seoTitle": "Google Business Profile Nigeria: Setup & Verification",

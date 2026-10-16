@@ -45,3 +45,9 @@ The marketing timeline, social-media budget breakdown and SEO journey are origin
 Selected and checked on 13 October 2026: [Ketut Subiyanto — Woman Holding Brown Wooden Signage](https://www.pexels.com/photo/woman-holding-brown-wooden-signage-4473097/), under the [Pexels license](https://www.pexels.com/license/). The shop-door photograph is illustrative; it does not depict a Nigerian business or MoTechy client, and implies no endorsement. A visible caption credits the photographer.
 
 The CDN supplied `assets/images/insights/google-business-profile-{480,800,1200}.webp` and `google-business-profile-share.jpg`, preserving the photo's content and colours. Full-size dimensions are 1200 × 800; the WebP variants are approximately 22–94 KB. These files are served locally with content hashes. The setup-sequence diagram is original semantic HTML, with real text and no invented performance data.
+
+## Website versus web application guide
+
+Selected and checked on 16 October 2026: [Jakub Zerdzicki — Creative Workspace with Notebooks and Monitors](https://www.pexels.com/photo/creative-workspace-with-notebooks-and-monitors-38888711/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates planning and development; it does not depict MoTechy's workspace or a client project, and implies no endorsement. The article credits the photographer beneath the cover.
+
+The CDN supplied `assets/images/insights/website-vs-app-{480,800,1200}.webp` and `website-vs-app-share.jpg`, preserving content and colours. The full-size assets are 1200 × 800; WebP sizes are approximately 9–26 KB. Files are served locally with content hashes. The supporting booking-workflow visual is original semantic HTML, explicitly labelled as a hypothetical planning example.

@@ -1,0 +1,350 @@
+<div class="article-answer">
+  <p>
+    <strong
+      >Choose a business website when the main job is to explain your offer and
+      generate enquiries. Consider a web application when people need to
+      complete tasks, maintain records or follow rules through the
+      browser.</strong
+    >
+    Many businesses need a combination: public pages for discovery and an
+    application for the work that follows.
+  </p>
+</div>
+<p>
+  If you are comparing development proposals in Nigeria, the phrase “we will
+  build you a website” leaves important questions unanswered. Does that mean
+  course information and a contact form, or a system that reserves a seat,
+  checks payment and gives staff a current attendance list? Those are different
+  responsibilities, even when the screens look similar.
+</p>
+<p>
+  This guide helps you choose the right scope. It includes a worked Abuja
+  training-business example and an
+  <a href="/assets/resources/website-or-web-app-decision-sheet.md" download
+    >editable website-or-application decision sheet</a
+  >.
+</p>
+
+<h2 id="difference">
+  What is the difference between a website and a web application?
+</h2>
+<p>
+  A website is a collection of pages and resources reached through a browser. In
+  a typical company website, the main experience is reading, exploring services
+  and making contact. A web application uses the browser as a working interface:
+  a person calculates something, edits a record, completes a lesson or manages a
+  booking.
+</p>
+<p>
+  The terms overlap. A contact form does not automatically turn a company
+  website into a large software project. A useful application can also run
+  without user accounts. Choose your scope by what people must accomplish and
+  what the business must reliably maintain.
+</p>
+<p>
+  “Static” and “dynamic” describe a different aspect of the implementation. MDN
+  explains how servers can return prepared files or generate responses using
+  data and requests. Neither label, by itself, tells you whether a product meets
+  your business needs. See
+  <a
+    href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction"
+    >MDN’s introduction to server-side websites</a
+  >.
+</p>
+<div
+  class="article-table"
+  role="region"
+  aria-label="Website and web application scope comparison"
+  tabindex="0"
+>
+  <table>
+    <caption>
+      Compare the job before comparing technology
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">What the visitor needs</th>
+        <th scope="col">A sensible starting scope</th>
+        <th scope="col">What needs checking</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Read services, see work and request a quote.</td>
+        <td>A company website with a dependable enquiry route.</td>
+        <td>Clear content, mobile reading and message delivery.</td>
+      </tr>
+      <tr>
+        <td>Choose an appointment from available slots.</td>
+        <td>A website connected to a suitable booking product.</td>
+        <td>Availability, cancellations and who owns the booking record.</td>
+      </tr>
+      <tr>
+        <td>Review private documents and approve a job.</td>
+        <td>A portal or application, bought or built around the workflow.</td>
+        <td>Access permissions, version history and approval rules.</td>
+      </tr>
+      <tr>
+        <td>Practise a skill or use a calculator.</td>
+        <td>A focused browser application; accounts may be unnecessary.</td>
+        <td>Correct behaviour, saved state and device limitations.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="website-first">When a website is a good first investment</h2>
+<p>
+  A website is a strong starting point when customers mainly need to understand
+  your offer, assess your credibility and contact you. An Abuja consultancy, an
+  Ibadan caterer or a Lagos design studio may need useful service pages and a
+  clear enquiry process before it needs a customer dashboard.
+</p>
+<p>
+  Write down what happens after an enquiry. Who receives it? What details do
+  they need? How do they respond, and where is the conversation recorded? If a
+  small team can handle that process reliably with its current tools, a custom
+  portal may add little immediate value.
+</p>
+<p>
+  For this scope, ask a supplier to demonstrate a complete journey on a phone:
+  find the relevant service, understand the offer, submit a request in a test
+  environment and see an accurate confirmation. W3C’s
+  <a href="https://www.w3.org/WAI/tutorials/forms/"
+    >accessible forms guidance</a
+  >
+  emphasises labels, instructions and useful success or error feedback. These
+  details matter even on a short contact form.
+</p>
+<p>
+  You can add an existing scheduling, shop or payment service where it fits.
+  Agree who maintains each integration and what happens if it fails. A link to
+  another product does not remove the need to test the handover.
+</p>
+
+<h2 id="application-signals">When the work calls for an application</h2>
+<p>
+  Application scope becomes more relevant when the browser must support a
+  recurring task with meaningful rules. Look for shared records, different user
+  responsibilities, changing statuses and information that must remain
+  consistent across devices or staff members.
+</p>
+<p>
+  For example, “customers can upload a document” sounds like one feature. The
+  working process might also require file limits, permission checks, a reviewer,
+  a rejection reason, a replacement version and a record of the final approval.
+  Those decisions determine the work more accurately than the number of screens.
+</p>
+<p>
+  Separate identity from permission. Knowing who signed in does not mean they
+  may view every record. OWASP recommends least privilege, denying access by
+  default and validating permissions on every request. A hidden menu button is
+  insufficient protection. Use its
+  <a
+    href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+    >authorization guidance</a
+  >
+  to frame questions for your developer.
+</p>
+<p>
+  An application requirement does not automatically justify a custom build. Test
+  an existing product against the important rules first. Our
+  <a href="/blog/custom-software-development-small-business"
+    >custom software guide</a
+  >
+  explains the separate decision between buying, configuring and building.
+</p>
+
+<h2 id="worked-example">Worked example: a training business in Abuja</h2>
+<p>
+  <strong
+    >This example is hypothetical, not a MoTechy client or a performance
+    claim.</strong
+  >
+  Suppose a training business runs weekend classes with an assumed capacity of
+  12 learners per class. It receives enquiries through its website and messages,
+  while an administrator maintains the class list.
+</p>
+<p>
+  If visitors only need dates, course details and a way to enquire, a website
+  can do that job. The administrator can check capacity and confirm each booking
+  manually. The public wording should say “request a place” if submitting the
+  form does not reserve one.
+</p>
+<p>
+  Now change the requirement: a learner must select a class, pay and receive a
+  confirmed place without waiting for the administrator. The business needs
+  booking behaviour, whether supplied by an existing platform or custom
+  software. It must define what happens if two people request the final seat,
+  payment remains pending or a confirmation email is delayed.
+</p>
+
+<figure class="article-visual" aria-labelledby="booking-workflow">
+  <p class="visual-title" id="booking-workflow">
+    Illustrative booking workflow: decisions behind one button
+  </p>
+  <ol class="visual-steps">
+    <li>
+      <span class="visual-step-label">01 · Request</span
+      ><strong>Choose the class</strong>Check the current capacity and explain
+      whether a place is being held.
+    </li>
+    <li>
+      <span class="visual-step-label">02 · Payment</span
+      ><strong>Check the transaction</strong>Distinguish pending, failed and
+      verified successful payment.
+    </li>
+    <li>
+      <span class="visual-step-label">03 · Confirmation</span
+      ><strong>Allocate the place</strong>Apply the agreed booking rules once,
+      then show the confirmed record.
+    </li>
+    <li>
+      <span class="visual-step-label">04 · Exceptions</span
+      ><strong>Resolve the unusual case</strong>Give staff a route for expired
+      holds, cancellations and payment disputes.
+    </li>
+  </ol>
+  <figcaption>
+    A planning model for the hypothetical training business. Hold periods,
+    cancellation terms and capacity rules must be agreed before implementation.
+  </figcaption>
+</figure>
+
+<p>
+  For a Paystack integration, the developer should verify the transaction
+  through the server and use the transaction’s status, rather than treating a
+  successful API request as proof of payment. Paystack also warns about
+  delivering value twice when confirmation can arrive through multiple paths.
+  See its
+  <a href="https://paystack.com/docs/payments/verify-payments/"
+    >payment verification documentation</a
+  >. A screenshot from a learner is not a substitute for the agreed payment
+  check.
+</p>
+<p>
+  Keep booking status separate from payment status. A payment might arrive after
+  a temporary seat hold has expired. In that case, the system needs an agreed
+  resolution, such as staff review and an alternative class or refund process.
+  It should not silently exceed capacity or tell the learner everything is
+  confirmed.
+</p>
+<p>
+  A proportionate first release might use an established booking product
+  connected to the public website. Consider custom work only when testing
+  reveals an important gap. Write down that gap precisely—for example, “the
+  product cannot enforce our approval rule”—rather than “we want something
+  unique”.
+</p>
+
+<h2 id="portfolio-examples">
+  What MoTechy’s projects show about the distinction
+</h2>
+<p>
+  MoTechy’s company website presents services, work and articles, with a
+  validated enquiry form. Its main purpose is communication and contact. The
+  form still needs server-side checks and reliable delivery; a marketing website
+  can have backend behaviour without becoming a customer-management platform.
+</p>
+<p>
+  <a href="/work/zerotocode">ZeroToCode Academy</a> is an independent learning
+  application with lessons, practice and quizzes. Its documented implementation
+  saves progress in the current browser without requiring an account. That
+  provides a useful example of application behaviour without a central customer
+  database; progress does not automatically follow the learner to another
+  device.
+</p>
+<p>
+  <a href="/work/impactdesk">ImpactDesk</a> separates its public product website
+  from a signed-in workspace for program records, evidence, reviews and
+  reporting. Its case study describes the architecture and the limits of the
+  public preview. It is a pilot product, and its example dashboard figures are
+  not client results.
+</p>
+<p>
+  These projects illustrate different jobs and design choices. They do not
+  establish which implementation your business should buy without understanding
+  its own workflow.
+</p>
+
+<h2 id="mobile-search">Plan for phones, connectivity and search</h2>
+<p>
+  Test the devices and connection conditions your staff and customers actually
+  use. For the training example, try a modest Android phone, a narrow screen and
+  an interrupted request. Can the learner tell whether a booking succeeded? Can
+  they return to the confirmed record without paying again? A polished desktop
+  demonstration leaves those questions unanswered.
+</p>
+<p>
+  A progressive web app can add capabilities such as installation and offline
+  operation. They need deliberate implementation and browser testing; describing
+  a project as a PWA does not make every task work offline.
+  <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
+    >MDN’s PWA overview</a
+  >
+  explains the available capabilities. Decide which information may be cached
+  and which actions need current server data. A saved course description and an
+  authoritative seat count have different freshness requirements.
+</p>
+<p>
+  Public pages still need to be discoverable. Google can process
+  JavaScript-powered pages, but their content and links must be accessible to
+  its crawler and renderer. Follow
+  <a
+    href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics"
+    >Google’s JavaScript SEO guidance</a
+  >
+  for public course or service pages. Keep private learner records behind proper
+  access controls. A web application is not an automatic SEO disadvantage, and a
+  particular framework does not guarantee rankings.
+</p>
+
+<h2 id="compare-proposals">
+  Compare proposals by responsibility and acceptance
+</h2>
+<p>
+  A five-page website and a five-screen booking application may have very
+  different scopes. Ask suppliers to price the same agreed requirements. Include
+  design, content, integrations, data migration where needed, testing, handover
+  and ongoing operation. Avoid comparing one supplier’s complete service with
+  another’s initial build fee.
+</p>
+<p>
+  For any application, identify who owns the records, who can export them and
+  who handles support. Ask how backups are restored, access is removed when
+  staff leave, and failed transactions are investigated. For a website, also
+  agree who updates content and maintains its forms and dependencies. Neither
+  option becomes maintenance-free after launch.
+</p>
+<p>Turn the example’s requirements into acceptance checks:</p>
+<ul>
+  <li>
+    A learner can understand the class location, schedule and booking terms on a
+    phone.
+  </li>
+  <li>A pending or failed payment does not produce a false confirmation.</li>
+  <li>Repeating a confirmation event does not create a second booking.</li>
+  <li>
+    Competing requests cannot allocate more places than the agreed capacity.
+  </li>
+  <li>
+    Staff can resolve an exception without exposing another learner’s
+    information.
+  </li>
+  <li>
+    The business can export its current class list and explain each booking’s
+    status.
+  </li>
+</ul>
+<p>
+  Use the
+  <a href="/assets/resources/website-or-web-app-decision-sheet.md" download
+    >free decision sheet</a
+  >
+  to record the main job, data, roles, exceptions and acceptance evidence. For
+  quote comparison, read
+  <a href="/blog/website-design-cost-nigeria">website design costs in Nigeria</a
+  >. When your requirements are clearer, explore
+  <a href="/software-development">MoTechy’s software development service</a> and
+  discuss a scope that fits the work.
+</p>

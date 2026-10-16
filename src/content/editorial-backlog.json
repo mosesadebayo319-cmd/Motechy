@@ -13,7 +13,9 @@
     "group": "software",
     "keyword": "website vs web application",
     "angle": "Choose the right scope using accounts, permissions, business workflows and data requirements; draw on verified MoTechy project features.",
-    "status": "queued"
+    "status": "published",
+    "publishedAt": "2026-10-16",
+    "publicationMode": "scheduled"
   },
   {
     "slug": "social-media-content-calendar-small-business",
