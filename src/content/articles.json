@@ -1,5 +1,32 @@
 [
   {
+    "slug": "social-media-content-calendar-small-business",
+    "title": "Social media content calendar for small businesses in Nigeria: a workable monthly plan",
+    "seoTitle": "Social Media Content Calendar for Small Business",
+    "intro": "Plan useful posts, assign approvals and check what goes live. Includes a four-week Nigerian business example and a free editable content calendar.",
+    "category": "Social media",
+    "group": "marketing",
+    "service": "Social Media Management",
+    "related": [
+      "digital-marketing-small-business-nigeria",
+      "social-media-management-cost-nigeria"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-20",
+    "updatedAt": "2026-10-20",
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/content-calendar",
+      "share": "assets/images/insights/content-calendar-share.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "A hand holding a yellow weekly planner beside notebooks and a pencil",
+      "credit": "cottonbro studio / Pexels",
+      "source": "https://www.pexels.com/photo/notebooks-on-a-desk-5124877/"
+    }
+  },
+  {
     "slug": "website-vs-web-application",
     "title": "Website vs web application: which does your Nigerian business need?",
     "seoTitle": "Website vs Web Application: A Business Decision Guide",

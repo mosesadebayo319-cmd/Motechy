@@ -51,3 +51,9 @@ The CDN supplied `assets/images/insights/google-business-profile-{480,800,1200}.
 Selected and checked on 16 October 2026: [Jakub Zerdzicki — Creative Workspace with Notebooks and Monitors](https://www.pexels.com/photo/creative-workspace-with-notebooks-and-monitors-38888711/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates planning and development; it does not depict MoTechy's workspace or a client project, and implies no endorsement. The article credits the photographer beneath the cover.
 
 The CDN supplied `assets/images/insights/website-vs-app-{480,800,1200}.webp` and `website-vs-app-share.jpg`, preserving content and colours. The full-size assets are 1200 × 800; WebP sizes are approximately 9–26 KB. Files are served locally with content hashes. The supporting booking-workflow visual is original semantic HTML, explicitly labelled as a hypothetical planning example.
+
+## Social media content calendar guide
+
+Selected and checked on 20 October 2026: [cottonbro studio — Notebooks on a Desk](https://www.pexels.com/photo/notebooks-on-a-desk-5124877/), under the [Pexels license](https://www.pexels.com/license/). The planner photograph illustrates content preparation; it does not depict MoTechy staff, workspace or a client, and implies no endorsement. The article credits the photographer beneath the cover.
+
+The CDN supplied `assets/images/insights/content-calendar-{480,800,1200}.webp` and `content-calendar-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 800; WebP files are approximately 6–45 KB. Files are served locally with content hashes. The four-stage approval workflow is original semantic HTML with readable text, not a third-party diagram or a claim of measured results.
