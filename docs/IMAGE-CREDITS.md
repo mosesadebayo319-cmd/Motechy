@@ -57,3 +57,9 @@ The CDN supplied `assets/images/insights/website-vs-app-{480,800,1200}.webp` and
 Selected and checked on 20 October 2026: [cottonbro studio — Notebooks on a Desk](https://www.pexels.com/photo/notebooks-on-a-desk-5124877/), under the [Pexels license](https://www.pexels.com/license/). The planner photograph illustrates content preparation; it does not depict MoTechy staff, workspace or a client, and implies no endorsement. The article credits the photographer beneath the cover.
 
 The CDN supplied `assets/images/insights/content-calendar-{480,800,1200}.webp` and `content-calendar-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 800; WebP files are approximately 6–45 KB. Files are served locally with content hashes. The four-stage approval workflow is original semantic HTML with readable text, not a third-party diagram or a claim of measured results.
+
+## Website redesign SEO checklist
+
+Selected and checked on 23 October 2026: [Jakub Zerdzicki — Hands Writing Notes for Coding Project at Desk](https://www.pexels.com/photo/hands-writing-notes-for-coding-project-at-desk-34212963/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates technical planning; it is not MoTechy's workspace or a client project and implies no endorsement. The article credits the photographer beneath the cover.
+
+The CDN supplied `assets/images/insights/redesign-seo-{480,800,1200}.webp` and `redesign-seo-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 675; files are served locally with content hashes. The supporting four-step visitor journey is original semantic HTML and explicitly hypothetical, with no invented performance data.

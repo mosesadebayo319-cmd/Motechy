@@ -1,5 +1,29 @@
 [
   {
+    "slug": "website-redesign-seo-checklist",
+    "title": "Website redesign SEO checklist: a practical launch plan for Nigerian businesses",
+    "seoTitle": "Website Redesign SEO Checklist for Nigerian Businesses",
+    "intro": "Keep useful URLs, plan redirects and test enquiries before a redesign goes live. Includes a Lagos business example and an editable launch checklist.",
+    "category": "Website planning",
+    "group": "software",
+    "service": "Software Development",
+    "related": ["seo-small-business-nigeria", "website-design-cost-nigeria"],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-23",
+    "updatedAt": "2026-10-23",
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/redesign-seo",
+      "share": "assets/images/insights/redesign-seo-share.jpg",
+      "width": 1200,
+      "height": 675,
+      "alt": "Hands sketching in a notebook beside a keyboard and monitors showing code",
+      "credit": "Jakub Zerdzicki / Pexels",
+      "source": "https://www.pexels.com/photo/hands-writing-notes-for-coding-project-at-desk-34212963/"
+    }
+  },
+  {
     "slug": "social-media-content-calendar-small-business",
     "title": "Social media content calendar for small businesses in Nigeria: a workable monthly plan",
     "seoTitle": "Social Media Content Calendar for Small Business",

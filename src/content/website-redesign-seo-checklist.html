@@ -1,0 +1,347 @@
+<div class="article-answer">
+  <p>
+    <strong
+      >A website redesign SEO checklist should protect the routes customers
+      already use: useful pages, existing links and the enquiry that
+      follows.</strong
+    >
+    Before approving the new design, record those routes, decide what changes
+    and test each decision. A good-looking homepage is only one part of a
+    successful launch.
+  </p>
+</div>
+<p>
+  Picture a Lagos print business replacing its website. A customer opens a flyer
+  link saved in WhatsApp, but the new site sends them to a general homepage.
+  Another scans a QR code on an old business card and reaches an error. The
+  redesign may look better while making it harder to buy.
+</p>
+<p>
+  This guide uses that hypothetical business to explain what to check before,
+  during and after launch. It is not a client case study or a promise of
+  unchanged rankings. Download the
+  <a href="/assets/resources/website-redesign-launch-checklist.md" download
+    >editable website redesign launch checklist</a
+  >
+  and use it to agree responsibilities with your developer.
+</p>
+
+<h2 id="define-the-change">Define what the redesign actually changes</h2>
+<p>
+  Write a short scope statement: which pages, content, features and addresses
+  will change? A new layout can keep the existing URLs. Moving
+  <code>/flyers.html</code> to <code>/services/flyer-printing</code> changes a
+  URL even when the domain stays the same.
+</p>
+<p>
+  Keep working addresses unless there is a clear reason to replace them. Ask
+  what each proposed change helps a customer do. “The new template uses
+  different names” is a problem to resolve with the developer, not a business
+  benefit.
+</p>
+<p>
+  Treat domain registration, email accounts and hosting changes as separate
+  decisions with their own agreed plan. A visual refresh does not automatically
+  require them. Google’s
+  <a
+    href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes"
+    >site-move guidance</a
+  >
+  distinguishes URL changes and recommends separating major changes where
+  possible. Its Change of Address tool is not needed for path changes within the
+  same domain.
+</p>
+
+<h2 id="record-the-baseline">Record the existing site before replacing it</h2>
+<p>
+  Create an inventory from the current sitemap, content system and a crawl of
+  the site. Add addresses found in brochures, adverts, social profiles and saved
+  customer messages. Include PDFs and other downloads: the navigation menu alone
+  may not reveal everything people still use.
+</p>
+<p>
+  For each address, record its purpose, title, main heading, important content,
+  next action and whether it currently works. Mark pages that explain a valuable
+  service or answer a recurring buying question. Save a recoverable copy of the
+  site and its configuration before development replaces anything.
+</p>
+<p>
+  Where you have authorised Search Console access, export available page and
+  query data with the date range and filters. The
+  <a href="https://support.google.com/webmasters/answer/7576553?hl=en"
+    >Performance report</a
+  >
+  distinguishes clicks, impressions, click-through rate and average position.
+  Those are search measures, not sales. Keep your enquiry records alongside
+  them, and write “not available” when tracking is missing rather than inventing
+  a baseline.
+</p>
+
+<h2 id="redirect-map">Decide the destination of each old address</h2>
+<p>
+  Give every inventory row an explicit decision: keep, move, merge or retire.
+  For a permanent move, Google recommends a server-side permanent redirect where
+  possible; <code>301</code> and <code>308</code> identify permanent moves. See
+  its
+  <a
+    href="https://developers.google.com/search/docs/crawling-indexing/301-redirects"
+    >redirect documentation</a
+  >. A renamed menu item does not create a redirect by itself.
+</p>
+<div
+  class="article-table"
+  role="region"
+  aria-label="Illustrative URL decisions for a Lagos print business"
+  tabindex="0"
+>
+  <table>
+    <caption>
+      Hypothetical URL map: these paths are examples, not MoTechy pages
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Existing address</th>
+        <th scope="col">Decision</th>
+        <th scope="col">Acceptance check</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/printing.html</code></td>
+        <td>Move to <code>/services/business-printing</code>.</td>
+        <td>The old link reaches the new page explaining the same service.</td>
+      </tr>
+      <tr>
+        <td><code>/flyers.html</code></td>
+        <td>Move to <code>/services/flyer-printing</code>.</td>
+        <td>
+          Flyer specifications and the flyer enquiry route remain available.
+        </td>
+      </tr>
+      <tr>
+        <td><code>/contact</code></td>
+        <td>Keep the address.</td>
+        <td>Current contact details and the correct service selection work.</td>
+      </tr>
+      <tr>
+        <td><code>/downloads/artwork-guide.pdf</code></td>
+        <td>Keep the file address; review its contents.</td>
+        <td>
+          The actual PDF opens on a phone and contains current instructions.
+        </td>
+      </tr>
+      <tr>
+        <td><code>/offers/old-promo</code></td>
+        <td>Retire if expired, with no useful replacement.</td>
+        <td>
+          A genuine missing/gone response explains the situation and offers
+          navigation.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Do not send every removed page to the homepage. Google’s
+  <a
+    href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes"
+    >site-move guidance</a
+  >
+  warns that irrelevant redirects can be treated as soft 404 errors. A merged
+  page is suitable only when it genuinely covers the old material. For a missing
+  page, use a real
+  <code>404</code>; <code>410</code> explicitly means the resource is gone.
+  <a
+    href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404"
+    >MDN explains that distinction</a
+  >. An error message displayed with a successful-page response is not the same
+  thing.
+</p>
+<p>
+  Have the developer record the initial response, final address and final
+  response for every mapped URL. Check both the destination and its content.
+  Remove loops and unnecessary intermediate redirects; a browser eventually
+  reaching “something” is too weak an acceptance test.
+</p>
+
+<h2 id="preserve-the-job">Preserve the job the page does for a buyer</h2>
+<p>
+  For the printer, the flyer page should still help someone understand available
+  formats, artwork requirements, collection or delivery arrangements and how to
+  request a quote. The owner must confirm those details. A large photograph and
+  “quality printing solutions” do not replace practical buying information.
+</p>
+<figure class="article-visual" aria-labelledby="redesign-journey">
+  <p class="visual-title" id="redesign-journey">
+    An old flyer link should still lead to a relevant enquiry
+  </p>
+  <ol class="visual-steps">
+    <li>
+      <span class="visual-step-label">01 · Existing link</span
+      ><strong>Saved in WhatsApp</strong>The customer opens the old flyer-page
+      address.
+    </li>
+    <li>
+      <span class="visual-step-label">02 · Permanent move</span
+      ><strong>One direct redirect</strong>The server sends the visitor to the
+      agreed replacement.
+    </li>
+    <li>
+      <span class="visual-step-label">03 · Useful destination</span
+      ><strong>Flyer details remain clear</strong>The new page answers
+      specifications and artwork questions.
+    </li>
+    <li>
+      <span class="visual-step-label">04 · Next action</span
+      ><strong>Request a flyer quote</strong>The enquiry identifies the service
+      the customer selected.
+    </li>
+  </ol>
+  <figcaption>
+    An original acceptance journey for the hypothetical print business, not a
+    measured conversion result.
+  </figcaption>
+</figure>
+<p>
+  Review titles, headings, image descriptions and structured data against what
+  each page actually says. Update internal links to the final addresses. If the
+  business no longer offers something, correct the content instead of preserving
+  an inaccurate promise for a keyword.
+</p>
+<p>
+  Check canonical links, which indicate a preferred address for duplicate or
+  very similar content. They must not accidentally point to the preview site or
+  contradict the intended public URL. Google’s
+  <a
+    href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
+    >canonical guidance</a
+  >
+  explains these signals. A canonical link does not replace the redirect needed
+  to send a visitor from an old address to a new one.
+</p>
+
+<h2 id="preview-and-mobile">Check the preview and the mobile journey</h2>
+<p>
+  Use a protected preview for unfinished work. Record how the preview is kept
+  out of search and how production will be checked separately. A
+  <code>noindex</code> rule can exclude accessible content from Google’s index,
+  but it does not make that content private. Google must be able to crawl the
+  page to read the rule; blocking it in <code>robots.txt</code> can prevent
+  that. Follow the
+  <a
+    href="https://developers.google.com/search/docs/crawling-indexing/block-indexing"
+    >noindex documentation</a
+  >.
+</p>
+<p>
+  Open the proposed service page on a phone, follow its quote link and check the
+  selected service. Try keyboard navigation, larger text and a slower
+  connection. Does the page remain usable before a large image finishes loading?
+  Can someone read the contact details without dismissing an obstructive
+  overlay?
+</p>
+<p>
+  Test form validation and delivery behaviour in a controlled test environment
+  with a test destination or simulated delivery. Cover accepted, rejected and
+  failed requests; a success message must not appear after a failed delivery. Do
+  not send dummy enquiries into a real sales inbox. W3C’s
+  <a href="https://www.w3.org/WAI/tutorials/forms/">forms guidance</a>
+  covers labels, instructions and clear success/error feedback. These checks
+  protect the business outcome after the visit.
+</p>
+
+<h2 id="launch-decision">Make a launch decision from evidence</h2>
+<p>
+  Give one person responsibility for the release decision and another named
+  contact for technical fixes. Agree when they are available, using Africa/Lagos
+  time if the team works across time zones. Keep the old release and a
+  documented recovery procedure available; restoring files alone may not restore
+  changed content or configuration.
+</p>
+<p>Before approving launch, require evidence that:</p>
+<ul>
+  <li>
+    Important old URLs reach the agreed destinations, including brochure and
+    QR-code links.
+  </li>
+  <li>
+    Public pages have the intended content, canonical addresses and crawl/index
+    settings.
+  </li>
+  <li>
+    Images and downloads work, and the mobile enquiry journey selects the
+    correct service.
+  </li>
+  <li>
+    Form success and failure paths passed controlled tests without contacting
+    real customers.
+  </li>
+  <li>
+    The sitemap lists intended public canonical pages, not preview URLs or
+    retired pages.
+  </li>
+  <li>
+    A release owner can pause or recover the launch if a critical journey fails.
+  </li>
+</ul>
+<p>
+  Recheck the actual production site after deployment. Google’s
+  <a
+    href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap"
+    >sitemap guidance</a
+  >
+  recommends fully qualified URLs and the canonical versions you want in search.
+  Submit the updated sitemap through an authorised Search Console property;
+  submission is not proof that every page has been indexed.
+</p>
+
+<h2 id="after-launch">Watch for specific failures after launch</h2>
+<p>
+  Record the release time and changes. Check key journeys immediately, then
+  review errors and enquiry handling during the first working days. Use matched
+  date ranges for later comparisons, accounting for weekdays, campaigns and
+  seasonal demand. Treat this as an operating routine, not a guaranteed recovery
+  timetable.
+</p>
+<p>
+  If a service page loses visits, first inspect its old and new addresses,
+  redirect, content and index settings. If visits remain steady but enquiries
+  stop, check the form and delivery path. If analytics alone goes quiet, confirm
+  measurement still works before declaring that customers disappeared.
+</p>
+<p>
+  Search Console’s
+  <a href="https://support.google.com/webmasters/answer/9012289?hl=en"
+    >URL Inspection tool</a
+  >
+  distinguishes the indexed version from a live test. A successful live test
+  does not guarantee indexing. Google’s
+  <a
+    href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes"
+    >migration guidance</a
+  >
+  also notes that rankings can fluctuate during site moves and recommends
+  retaining redirects for as long as possible, generally at least a year. Give
+  those redirects an owner beyond launch week.
+</p>
+
+<h2 id="handover-checklist">Use the checklist for a clearer handover</h2>
+<p>
+  The
+  <a href="/assets/resources/website-redesign-launch-checklist.md" download
+    >free launch checklist</a
+  >
+  is an editable Markdown/text file with the example URL map, blank evidence
+  fields and release responsibilities. Replace the example paths with your real
+  inventory; unchecked items are unfinished work, not approval.
+</p>
+<p>
+  Read our
+  <a href="/blog/seo-small-business-nigeria">small-business SEO guide</a>
+  for ongoing page improvements and our
+  <a href="/blog/website-design-cost-nigeria">website scope and quote guide</a>
+  when comparing proposals. MoTechy’s
+  <a href="/software-development">website and software development service</a>
+  can scope the rebuild, testing and launch. Bring the current site, the changes
+  you need and the customer journeys that must keep working.
+</p>
