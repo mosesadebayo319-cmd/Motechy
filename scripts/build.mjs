@@ -303,6 +303,10 @@ fs.writeFileSync(
   `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${base}/sitemap.xml\n`,
 );
 fs.writeFileSync(
+  path.join(out, "googlebadf2e3e432df562.html"),
+  "google-site-verification: googlebadf2e3e432df562.html",
+);
+fs.writeFileSync(
   path.join(out, "build-manifest.json"),
   JSON.stringify(
     { routes: pages.map((p) => p.path), assets: Object.fromEntries(cache) },
