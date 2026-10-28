@@ -13,7 +13,7 @@ function walk(dir) {
       e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)],
     );
 }
-const pages = walk(root).filter((p) => p.endsWith(".html"));
+const pages = walk(root).filter((p) => p.endsWith(".html") && !path.basename(p).startsWith("googlebadf2e3e432df562"));
 test("Every service leads to a selectable enquiry accepted by the server", () => {
   const catalogue = fs.readFileSync(path.join(root, "services.html"), "utf8");
   const form = fs.readFileSync(path.join(root, "contact.html"), "utf8");
