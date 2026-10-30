@@ -63,3 +63,9 @@ The CDN supplied `assets/images/insights/content-calendar-{480,800,1200}.webp` a
 Selected and checked on 23 October 2026: [Jakub Zerdzicki — Hands Writing Notes for Coding Project at Desk](https://www.pexels.com/photo/hands-writing-notes-for-coding-project-at-desk-34212963/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates technical planning; it is not MoTechy's workspace or a client project and implies no endorsement. The article credits the photographer beneath the cover.
 
 The CDN supplied `assets/images/insights/redesign-seo-{480,800,1200}.webp` and `redesign-seo-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 675; files are served locally with content hashes. The supporting four-step visitor journey is original semantic HTML and explicitly hypothetical, with no invented performance data.
+
+## Marketing ROI guide
+
+Selected and checked on 30 October 2026: [Mikhail Nilov — A Person Sitting a Wooden Table with a Notepad and Laptop Using a Calculator](https://www.pexels.com/photo/a-person-sitting-a-wooden-table-with-a-notepad-and-laptop-using-a-calculator-6963847/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates financial recordkeeping; it does not depict MoTechy staff, clients or business records, and implies no endorsement. The article visibly credits the photographer.
+
+The CDN supplied `assets/images/insights/marketing-roi-{480,800,1200}.webp` and `marketing-roi-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 784; WebP files are approximately 12–33 KB. Files are served locally with content hashes. The supporting four-stage money-flow diagram is original semantic HTML. Its figures are explicitly hypothetical teaching assumptions and match the article and downloadable worksheet, not measured client results.

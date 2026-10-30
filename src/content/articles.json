@@ -1,5 +1,32 @@
 [
   {
+    "slug": "measure-marketing-return-small-business",
+    "title": "How to measure marketing ROI for a small business in Nigeria",
+    "seoTitle": "Marketing ROI for Small Businesses in Nigeria",
+    "intro": "Calculate marketing ROI beyond ad revenue. Includes a worked naira example, ROAS comparison, attribution checks and an editable measurement worksheet.",
+    "category": "Marketing measurement",
+    "group": "marketing",
+    "service": "Digital Growth",
+    "related": [
+      "digital-marketing-small-business-nigeria",
+      "social-media-management-cost-nigeria"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-10-30",
+    "updatedAt": "2026-10-30",
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/marketing-roi",
+      "share": "assets/images/insights/marketing-roi-share.jpg",
+      "width": 1200,
+      "height": 784,
+      "alt": "A person using a calculator beside a notebook, laptop and phone on a wooden desk",
+      "credit": "Mikhail Nilov / Pexels",
+      "source": "https://www.pexels.com/photo/a-person-sitting-a-wooden-table-with-a-notepad-and-laptop-using-a-calculator-6963847/"
+    }
+  },
+  {
     "slug": "website-redesign-seo-checklist",
     "title": "Website redesign SEO checklist: a practical launch plan for Nigerian businesses",
     "seoTitle": "Website Redesign SEO Checklist for Nigerian Businesses",
