@@ -69,3 +69,9 @@ The CDN supplied `assets/images/insights/redesign-seo-{480,800,1200}.webp` and `
 Selected and checked on 30 October 2026: [Mikhail Nilov — A Person Sitting a Wooden Table with a Notepad and Laptop Using a Calculator](https://www.pexels.com/photo/a-person-sitting-a-wooden-table-with-a-notepad-and-laptop-using-a-calculator-6963847/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates financial recordkeeping; it does not depict MoTechy staff, clients or business records, and implies no endorsement. The article visibly credits the photographer.
 
 The CDN supplied `assets/images/insights/marketing-roi-{480,800,1200}.webp` and `marketing-roi-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 784; WebP files are approximately 12–33 KB. Files are served locally with content hashes. The supporting four-stage money-flow diagram is original semantic HTML. Its figures are explicitly hypothetical teaching assumptions and match the article and downloadable worksheet, not measured client results.
+
+## Website maintenance checklist
+
+Selected and checked on 3 November 2026: [Daniil Komov — Modern Workspace with Laptop and Code Display](https://www.pexels.com/photo/modern-workspace-with-laptop-and-code-display-34804003/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates software work; it is not MoTechy's workspace, code or a client project and implies no endorsement. The article visibly credits the photographer.
+
+The CDN supplied `assets/images/insights/website-maintenance-{480,800,1200}.webp` and `website-maintenance-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 799; WebP files are approximately 16–63 KB. Files are served locally with content hashes. The supporting prepare/check/release/record workflow is original semantic HTML with readable text, not a third-party diagram or measured service promise.

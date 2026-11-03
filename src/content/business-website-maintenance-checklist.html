@@ -1,0 +1,396 @@
+<div class="article-answer">
+  <p>
+    <strong
+      >A useful website maintenance checklist for a small business covers the
+      customer journey, recovery, software updates, accurate content and account
+      renewals.</strong
+    >
+    Give each check an owner and a clear pass condition. “The homepage opens” is
+    a start; it does not tell you whether a buyer can download the right
+    catalogue or whether an enquiry reaches the team.
+  </p>
+</div>
+<p>
+  Imagine an Ibadan furniture workshop whose website shows office desks and
+  accepts quote requests. Its homepage looks fine, but the downloadable
+  catalogue lists discontinued finishes and the enquiry form uses an old
+  delivery account. The workshop needs a maintenance routine that follows how
+  customers actually buy.
+</p>
+<p>
+  That workshop is a hypothetical example, not a MoTechy client or a report of
+  measured losses. Use the
+  <a href="/assets/resources/website-maintenance-log.md" download
+    >editable website maintenance checklist and log</a
+  >
+  to adapt the routine to your own site.
+</p>
+
+<h2 id="know-what-you-maintain">Know what you maintain and who owns it</h2>
+<p>
+  Start with a short inventory: website address, domain registrar, hosting
+  provider, content system, code repository, form delivery service, file storage
+  and any payment or booking integrations. Record the responsible person and
+  renewal date for each. Keep passwords and recovery codes in an appropriate
+  password manager, not in the maintenance spreadsheet.
+</p>
+<p>The work depends on the website:</p>
+<ul>
+  <li>
+    <strong>WordPress:</strong> someone must maintain the core software, themes,
+    plugins, database and uploaded files.
+  </li>
+  <li>
+    <strong>Managed website builder:</strong> confirm what the provider handles
+    and what you must manage, including content, exports, integrations and
+    account access.
+  </li>
+  <li>
+    <strong>Static or custom website:</strong> check the source, build tools,
+    hosting configuration and connected services. A static page can still depend
+    on a separate form endpoint.
+  </li>
+</ul>
+<p>
+  Choose a business owner who can approve content and spending, and a technical
+  owner who can investigate failures. One person may hold both roles. The
+  important part is that an alert has a named destination and someone is
+  authorised to act.
+</p>
+
+<h2 id="set-a-realistic-routine">
+  Set a routine without postponing urgent problems
+</h2>
+<p>
+  Use these intervals as a starting plan, not a universal service standard.
+  Increase checks where orders, bookings or frequent publishing make failures
+  more costly.
+</p>
+<ul>
+  <li>
+    <strong>Weekly:</strong> walk through the main customer route, review
+    availability and backup alerts, and confirm current contact details.
+  </li>
+  <li>
+    <strong>Monthly:</strong> reconcile the full checklist, review updates and
+    access, check important pages and downloads, and record the next actions.
+  </li>
+  <li>
+    <strong>After a change:</strong> retest affected pages and the enquiry or
+    purchase route, even if the monthly review happened yesterday.
+  </li>
+  <li>
+    <strong>At an agreed recovery-test interval:</strong> restore a backup in an
+    isolated environment and record the result. Choose the interval around data
+    changes and business risk.
+  </li>
+  <li>
+    <strong>When an alert arrives:</strong> assess an outage, failed backup or
+    relevant security advisory promptly; do not wait for the next calendar
+    appointment.
+  </li>
+</ul>
+<p>
+  Backup creation and monitoring may run automatically much more often than a
+  person reviews this checklist. Agree the maximum acceptable data loss and
+  interruption with your developer. A monthly review does not mean a monthly
+  backup is sufficient.
+</p>
+
+<h2 id="test-the-customer-route">
+  Test the route from service page to usable enquiry
+</h2>
+<p>
+  Open the site on a phone using mobile data, as well as on a desktop. Start
+  with a service or product link a customer could receive in WhatsApp. Check the
+  details, menu, call-to-action and download. Confirm that a phone link contains
+  the right number and a WhatsApp link opens the intended account without
+  sending a message.
+</p>
+<p>
+  On an enquiry form, inspect the selected service, labels, required fields and
+  error messages. A successful-looking screen is not sufficient proof of
+  delivery. Ask the developer to test acceptance and failure paths using a
+  staging site and a test inbox or mocked provider. If live delivery must be
+  checked, agree a controlled test with the recipient first; do not send
+  surprise enquiries or create real orders as part of routine browsing.
+</p>
+<p>
+  Record what the test actually covered. “Form layout and validation passed;
+  production delivery not tested” is useful evidence. “Everything works” hides
+  the remaining uncertainty. Keep customer data out of screenshots and test
+  fixtures.
+</p>
+
+<h2 id="prove-recovery">Prove that a backup can restore the right things</h2>
+<p>
+  Ask three questions: what is backed up, when did the latest successful backup
+  finish, and what happened during the last restoration test? WordPress’s
+  <a
+    href="https://developer.wordpress.org/advanced-administration/security/backup/"
+    >backup documentation</a
+  >
+  explains that a typical full restore needs both database and files. A database
+  export alone does not preserve uploaded photographs.
+</p>
+<p>
+  For a custom site, map the equivalent pieces: source code, uploaded media,
+  database records and the configuration needed to run them. A Git repository
+  may hold the application without holding its live orders. A host’s rollback
+  feature may restore a deployment without restoring a separate database.
+  Confirm the actual coverage with each provider.
+</p>
+<p>
+  Keep recoverable copies separately from the running site, with controlled
+  access. In an isolated restore, check that important pages render, media opens
+  and a representative workflow works. Prevent the restored copy from emailing
+  customers or running live payments. Record the backup timestamp, restore date,
+  checks and any missing data.
+</p>
+<p>
+  Choose backup frequency from the data the business cannot afford to recreate.
+  If new enquiries are stored throughout the day, discuss the loss between
+  backups explicitly. A “backup completed” notification confirms a job ran; a
+  successful restore demonstrates something more useful.
+</p>
+
+<h2 id="update-with-a-return-path">
+  Update software with a tested return path
+</h2>
+<p>
+  Maintain a list of the software your site actually uses. For WordPress, that
+  includes core, themes and plugins; for a custom application, it may include
+  language runtimes, libraries and build tools. Assign someone to review
+  relevant release notes and security notices.
+</p>
+<p>
+  <a href="https://wordpress.org/documentation/article/updating-wordpress/"
+    >WordPress recommends backing up before updating</a
+  >. For planned changes, have the technical owner verify recovery, test in a
+  preview environment, apply the change and repeat the important customer
+  checks. Agree who can restore service if the release fails, including how new
+  data created after the backup would be preserved.
+</p>
+<p>
+  For projects using npm, its
+  <a
+    href="https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities/"
+    >dependency audit documentation</a
+  >
+  describes reports of known vulnerabilities and warns that some fixes can
+  introduce breaking changes. Ask the developer to assess the advisory and test
+  the remedy. A clean dependency report does not certify the whole website, and
+  an automatic fix should not replace release testing.
+</p>
+<figure class="article-visual" aria-labelledby="maintenance-cycle">
+  <p class="visual-title" id="maintenance-cycle">
+    Close the maintenance task with evidence
+  </p>
+  <ol class="visual-steps">
+    <li>
+      <span class="visual-step-label">01 · Prepare</span
+      ><strong>Define the change</strong>Name the owner, affected customer route
+      and recovery plan.
+    </li>
+    <li>
+      <span class="visual-step-label">02 · Check</span
+      ><strong>Test a preview</strong>Use safe test data and confirm the
+      expected result.
+    </li>
+    <li>
+      <span class="visual-step-label">03 · Release</span
+      ><strong>Verify the live route</strong>Check the deployed page, links and
+      agreed acceptance conditions.
+    </li>
+    <li>
+      <span class="visual-step-label">04 · Record</span
+      ><strong>Keep the evidence</strong>Log the version, result, remaining
+      issue and next owner.
+    </li>
+  </ol>
+  <figcaption>
+    An original workflow for planned maintenance. Urgent incidents need a
+    response matched to their impact; this diagram is not a measured service
+    promise.
+  </figcaption>
+</figure>
+
+<h2 id="accounts-and-renewals">
+  Check accounts, renewals and the bills behind the site
+</h2>
+<p>
+  Confirm that the business can access its domain and hosting accounts, with an
+  appropriate second authorised person available if the main contact leaves.
+  Review administrator access and remove permissions that are no longer
+  required. Use individual accounts and multi-factor authentication where
+  supported.
+</p>
+<p>
+  <a
+    href="https://www.icann.org/resources/pages/renew-domain-name-2018-12-07-en"
+    >ICANN’s renewal guidance</a
+  >
+  emphasises timely payment, current contact information and understanding the
+  registrar’s terms. Record your actual provider’s dates and rules, including
+  for a <code>.ng</code> domain. Do not assume another domain extension’s expiry
+  or recovery timetable applies.
+</p>
+<p>
+  Check auto-renew status, payment method, billing currency and who sees
+  failed-payment notices. For a Nigerian business paying a foreign-currency
+  invoice, confirm that the chosen payment method can complete that provider’s
+  charge. Do not treat an enabled auto-renew switch as proof of payment.
+</p>
+<p>
+  List email, forms, file storage and paid plugins separately if they renew
+  separately. Check for HTTPS warnings and confirm who monitors certificate
+  renewal. Routine maintenance should not unexpectedly move the domain, change
+  email routing or replace hosting.
+</p>
+
+<h2 id="content-and-discovery">
+  Review content, mobile reading and search evidence
+</h2>
+<p>
+  Check your highest-value service pages, current offers, delivery areas,
+  contact details and frequently downloaded files. For the furniture workshop, a
+  catalogue revision is incomplete until the actual downloaded file contains the
+  approved finishes and ordering instructions. Open the file; do not rely on its
+  filename.
+</p>
+<p>
+  Try keyboard navigation and larger text. Look for visible focus,
+  understandable labels and controls that remain usable on a small screen. The
+  <a href="https://www.w3.org/WAI/test-evaluate/preliminary/"
+    >W3C accessibility Easy Checks</a
+  >
+  are a useful starting point, but explicitly do not constitute a complete
+  accessibility evaluation.
+</p>
+<p>
+  Repeat speed observations on comparable pages, devices and connections.
+  Investigate an oversized new photograph or failing third-party script when the
+  customer journey becomes noticeably slower. A single score is a diagnostic
+  clue, not the business outcome.
+</p>
+<p>
+  With authorised access, review Search Console for unexpected changes in
+  important pages. Google’s
+  <a
+    href="https://developers.google.com/search/docs/monitor-debug/search-console-start"
+    >Search Console introduction</a
+  >
+  explains indexing, search performance, security issues and page-experience
+  reports. Record the affected URL and evidence before requesting a fix. Search
+  clicks are not enquiries, and routine maintenance cannot promise rankings.
+</p>
+
+<h2 id="worked-maintenance-review">
+  Worked example: one maintenance review for the workshop
+</h2>
+<p>
+  Here is an illustrative review, with invented findings to show how to write
+  useful tasks. It is not an audit of a real business. Each row turns a vague
+  instruction into something another person can verify.
+</p>
+<div
+  class="article-table"
+  role="region"
+  aria-label="Hypothetical website maintenance review for an Ibadan furniture workshop"
+  tabindex="0"
+>
+  <table>
+    <caption>
+      Illustrative maintenance log: owner, finding and acceptance evidence
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Check and owner</th>
+        <th scope="col">Example finding</th>
+        <th scope="col">Evidence needed to close</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Catalogue · business owner</th>
+        <td>Downloaded PDF shows a discontinued finish.</td>
+        <td>
+          Approved replacement opens from the live product page and contains
+          current options.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Enquiry route · developer</th>
+        <td>
+          Preview test reports success when the delivery provider rejects the
+          message.
+        </td>
+        <td>
+          Failure produces an honest retry message; an accepted request reaches
+          the agreed test destination.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Recovery · technical owner</th>
+        <td>Backup exists, but no restore evidence is recorded.</td>
+        <td>
+          Isolated restore loads product images and the sample workflow;
+          timestamp and gaps are logged.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Renewal · account owner</th>
+        <td>Hosting billing contact still names a former contractor.</td>
+        <td>
+          Business-controlled contact and payment readiness are confirmed in the
+          provider account.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Mobile navigation · developer</th>
+        <td>Large text makes the catalogue button overlap another control.</td>
+        <td>
+          The corrected layout remains readable and each control can be used
+          independently.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Give each open item a due date based on impact. An unavailable site, suspected
+  compromise or broken revenue path needs prompt escalation. An outdated
+  optional team photograph can usually wait for planned content work. Keep
+  unresolved items open rather than marking the month “done” because someone
+  viewed every page.
+</p>
+
+<h2 id="agree-the-support-scope">
+  Agree the maintenance scope before buying a plan
+</h2>
+<p>
+  Ask what the plan includes, how frequently work happens, which evidence you
+  receive and what happens outside support hours. Separate response time from
+  resolution time. Confirm whether backups, restoration work, content edits,
+  dependency updates and third-party charges are included or quoted separately.
+</p>
+<p>
+  The monthly handover can be one concise record: checks completed, changes
+  released, evidence links, unresolved risks and the next owner and date. The
+  <a href="/assets/resources/website-maintenance-log.md" download
+    >maintenance log template</a
+  >
+  provides those fields without requiring customer information.
+</p>
+<p>
+  For initial and recurring budget questions, read
+  <a href="/blog/website-design-cost-nigeria">website design costs in Nigeria</a
+  >. If the work becomes a redesign, use the
+  <a href="/blog/website-redesign-seo-checklist"
+    >website redesign SEO checklist</a
+  >
+  to plan the larger change. MoTechy’s
+  <a href="/software-development">software development service</a> includes
+  testing, launch and maintenance, with ongoing support scoped to the needs of
+  the project.
+</p>

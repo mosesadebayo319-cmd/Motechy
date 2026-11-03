@@ -1,5 +1,32 @@
 [
   {
+    "slug": "business-website-maintenance-checklist",
+    "title": "Website maintenance checklist for small businesses in Nigeria",
+    "seoTitle": "Website Maintenance Checklist for Small Businesses",
+    "intro": "Keep customer journeys, backups, updates and renewals under control. Includes a Nigerian business example and an editable website maintenance log.",
+    "category": "Website maintenance",
+    "group": "software",
+    "service": "Software Development",
+    "related": [
+      "website-design-cost-nigeria",
+      "website-redesign-seo-checklist"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-11-03",
+    "updatedAt": "2026-11-03",
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/website-maintenance",
+      "share": "assets/images/insights/website-maintenance-share.jpg",
+      "width": 1200,
+      "height": 799,
+      "alt": "A laptop displaying code on a wooden desk beside a notebook and orange mug",
+      "credit": "Daniil Komov / Pexels",
+      "source": "https://www.pexels.com/photo/modern-workspace-with-laptop-and-code-display-34804003/"
+    }
+  },
+  {
     "slug": "measure-marketing-return-small-business",
     "title": "How to measure marketing ROI for a small business in Nigeria",
     "seoTitle": "Marketing ROI for Small Businesses in Nigeria",
