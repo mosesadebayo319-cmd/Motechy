@@ -75,3 +75,9 @@ The CDN supplied `assets/images/insights/marketing-roi-{480,800,1200}.webp` and 
 Selected and checked on 3 November 2026: [Daniil Komov — Modern Workspace with Laptop and Code Display](https://www.pexels.com/photo/modern-workspace-with-laptop-and-code-display-34804003/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates software work; it is not MoTechy's workspace, code or a client project and implies no endorsement. The article visibly credits the photographer.
 
 The CDN supplied `assets/images/insights/website-maintenance-{480,800,1200}.webp` and `website-maintenance-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 799; WebP files are approximately 16–63 KB. Files are served locally with content hashes. The supporting prepare/check/release/record workflow is original semantic HTML with readable text, not a third-party diagram or measured service promise.
+
+## Service landing page checklist
+
+Selected on 6 November and rechecked on 10 November 2026: [Yan Krukau — A Person Sketching on a Notebook](https://www.pexels.com/photo/a-person-sketching-on-a-notebook-7793668/), under the [Pexels license](https://www.pexels.com/license/). The photograph illustrates planning; it does not depict MoTechy staff, workspace or a client project and implies no endorsement. The article visibly credits the photographer.
+
+The CDN supplied `assets/images/insights/landing-page-{480,800,1200}.webp` and `landing-page-share.jpg`, preserving content and colours. Full-size dimensions are 1200 × 800; WebP files are approximately 12–33 KB. Files are served locally with content hashes. The supporting relevance/scope/confidence/action diagram is original semantic HTML for a hypothetical service page, not a screenshot, tested conversion formula or client result.

@@ -1,5 +1,32 @@
 [
   {
+    "slug": "landing-page-checklist-service-business",
+    "title": "Landing page checklist for service businesses in Nigeria",
+    "seoTitle": "Landing Page Checklist for Service Businesses",
+    "intro": "Align your advert, offer, evidence and enquiry form. Includes an annotated Nigerian service example and an editable landing page review checklist.",
+    "category": "Landing pages",
+    "group": "marketing",
+    "service": "Digital Growth",
+    "related": [
+      "digital-marketing-small-business-nigeria",
+      "measure-marketing-return-small-business"
+    ],
+    "format": "guide",
+    "status": "published",
+    "publishedAt": "2026-11-10",
+    "updatedAt": "2026-11-10",
+    "author": "MoTechy",
+    "cover": {
+      "image": "assets/images/insights/landing-page",
+      "share": "assets/images/insights/landing-page-share.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Hands sketching in a spiral notebook beside a laptop and tablet",
+      "credit": "Yan Krukau / Pexels",
+      "source": "https://www.pexels.com/photo/a-person-sketching-on-a-notebook-7793668/"
+    }
+  },
+  {
     "slug": "business-website-maintenance-checklist",
     "title": "Website maintenance checklist for small businesses in Nigeria",
     "seoTitle": "Website Maintenance Checklist for Small Businesses",

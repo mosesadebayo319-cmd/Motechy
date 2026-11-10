@@ -58,7 +58,9 @@
     "group": "marketing",
     "keyword": "landing page checklist for service businesses",
     "angle": "Align the ad promise, evidence, mobile layout and enquiry form, with an annotated hypothetical service offer.",
-    "status": "queued"
+    "status": "published",
+    "publishedAt": "2026-11-10",
+    "publicationMode": "scheduled"
   },
   {
     "slug": "custom-crm-vs-existing-software",
